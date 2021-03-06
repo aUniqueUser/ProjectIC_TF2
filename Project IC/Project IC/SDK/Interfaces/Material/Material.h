@@ -9,37 +9,37 @@ class C_MaterialSystem
 public:
 	IMaterial* Find(char const* szMat, const char* szTextureGroup, bool bComplain = true, const char* szPrefix = NULL)
 	{
-		typedef IMaterial* (__thiscall* FN)(PVOID, const char*, const char*, bool, const char*);
+		typedef IMaterial* ( FN)(void *, const char*, const char*, bool, const char*);
 		return GetVFunc<FN>(this, 73)(this, szMat, szTextureGroup, bComplain, szPrefix);
 	}
 
 	IMaterial* Create(char const* szName, KeyValues* pKV)
 	{
-		typedef IMaterial* (__thiscall* FN)(PVOID, const char*, KeyValues*);
+		typedef IMaterial* ( FN)(void *, const char*, KeyValues*);
 		return GetVFunc<FN>(this, 72)(this, szName, pKV);
 	}
 
 	IMaterial* Get(MaterialHandle_t hMat)
 	{
-		typedef IMaterial* (__thiscall* FN)(PVOID, MaterialHandle_t);
+		typedef IMaterial* ( FN)(void *, MaterialHandle_t);
 		return GetVFunc<FN>(this, 78)(this, hMat);
 	}
 
 	MaterialHandle_t First()
 	{
-		typedef MaterialHandle_t(__thiscall* FN)(PVOID);
+		typedef MaterialHandle_t( FN)(void *);
 		return GetVFunc<FN>(this, 75)(this);
 	}
 
 	MaterialHandle_t Invalid()
 	{
-		typedef MaterialHandle_t(__thiscall* FN)(PVOID);
+		typedef MaterialHandle_t( FN)(void *);
 		return GetVFunc<FN>(this, 77)(this);
 	}
 
 	MaterialHandle_t Next(MaterialHandle_t hMat)
 	{
-		typedef MaterialHandle_t(__thiscall* FN)(PVOID, MaterialHandle_t);
+		typedef MaterialHandle_t( FN)(void *, MaterialHandle_t);
 		return GetVFunc<FN>(this, 76)(this, hMat);
 	}
 };

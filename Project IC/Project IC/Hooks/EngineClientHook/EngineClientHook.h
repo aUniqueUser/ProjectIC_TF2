@@ -8,7 +8,7 @@ namespace EngineClientHook
 	namespace IsPlayingTimeDemo
 	{
 		const int index = 78;
-		using fn = bool(__thiscall *)(C_EngineClient *);
-		bool __stdcall Hook();
+		using fn = bool(*)(C_EngineClient *);
+		bool Hook();
 	}
 }

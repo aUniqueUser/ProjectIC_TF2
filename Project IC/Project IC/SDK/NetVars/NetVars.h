@@ -11,9 +11,9 @@ class C_NetVars
 	using map_type = std::unordered_map<std::string, std::shared_ptr<node>>;
 
 	struct node {
-		node(DWORD offset) : offset(offset) {}
+		node(uintptr_t offset) : offset(offset) {}
 		map_type nodes;
-		DWORD offset;
+		uintptr_t offset;
 	};
 
 	map_type nodes;
@@ -24,19 +24,19 @@ public:
 private:
 	void populate_nodes(class RecvTable *recv_table, map_type *map);
 
-	DWORD get_offset_recursive(map_type &map, int acc, const char *name) {
+	uintptr_t get_offset_recursive(map_type &map, int acc, const char *name) {
 		return acc + map[name]->offset;
 	}
 
 	template<typename ...args_t>
-	DWORD get_offset_recursive(map_type &map, int acc, const char *name, args_t ...args) {
+	uintptr_t get_offset_recursive(map_type &map, int acc, const char *name, args_t ...args) {
 		const auto &node = map[name];
 		return get_offset_recursive(node->nodes, acc + node->offset, args...);
 	}
 
 public:
 	template<typename ...args_t>
-	DWORD get_offset(const char *name, args_t ...args) {
+	uintptr_t get_offset(const char *name, args_t ...args) {
 		const auto &node = nodes[name];
 		return get_offset_recursive(node->nodes, node->offset, args...);
 	}
@@ -47,7 +47,7 @@ extern C_NetVars gNetVars;
 template<typename T>
 class CDynamicNetvar
 {
-	DWORD off;
+	uintptr_t off;
 
 public:
 	template<typename... args_t>
@@ -60,15 +60,15 @@ public:
 		off = gNetVars.get_offset(a...) + offset;
 	}
 
-	T GetValue(PVOID base) {
-		return *reinterpret_cast<T *>((DWORD)base + (DWORD)off);
+	T GetValue(void * base) {
+		return *reinterpret_cast<T *>((uintptr_t)base + (uintptr_t)off);
 	}
 
-	void SetValue(PVOID base, T val) {
-		*reinterpret_cast<T *>((DWORD)(base)+((DWORD)(off))) = val;
+	void SetValue(void * base, T val) {
+		*reinterpret_cast<T *>((uintptr_t)(base)+((uintptr_t)(off))) = val;
 	}
 };
 
-#define DYNVAR(name, type, ...) static CDynamicNetvar<type>  ##name( __VA_ARGS__ )
+#define DYNVAR(name, type, ...) static CDynamicNetvar<type>  name( __VA_ARGS__ )
 #define DYNVAR_RETURN(type, base, ...) DYNVAR(n, type, __VA_ARGS__); return n.GetValue(base)
 #define DYNVAR_SET(type, base, value, ...) DYNVAR(n, type, __VA_ARGS__); n.SetValue(base,value)

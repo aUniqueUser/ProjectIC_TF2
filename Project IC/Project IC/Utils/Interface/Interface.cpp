@@ -1,6 +1,6 @@
 #include "Interface.h"
 
-PVOID CInterface::Get(PCCH szModule, PCCH szObject)
+void * CInterface::Get(PCCH szModule, PCCH szObject)
 {
 	HMODULE Module = GetModuleHandleA(szModule);
 

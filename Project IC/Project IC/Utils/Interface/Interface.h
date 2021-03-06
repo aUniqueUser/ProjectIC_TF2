@@ -4,7 +4,7 @@
 class CInterface
 {
 private:
-	typedef PVOID(*InstantiateInterface)();
+	typedef void *(*InstantiateInterface)();
 
 	struct Interface_t
 	{
@@ -14,7 +14,7 @@ private:
 	};
 
 public:
-	PVOID Get(PCCH szModule, PCCH szObject);
+	void * Get(PCCH szModule, PCCH szObject);
 };
 
 extern CInterface gInterface;

@@ -26,7 +26,6 @@ include_directories("Project IC/Project IC/Hooks/ModelRenderHook")
 include_directories("Project IC/Project IC/Hooks/PanelHook")
 include_directories("Project IC/Project IC/Hooks/PredictionHook")
 include_directories("Project IC/Project IC/Hooks/SurfaceHook")
-include_directories("Project IC/Project IC/Hooks/WndProcHook")
 include_directories("Project IC/Project IC/SDK")
 include_directories("Project IC/Project IC/SDK/Includes")
 include_directories("Project IC/Project IC/SDK/Interfaces")
@@ -118,8 +117,6 @@ add_executable(ProjectIC_TF2
         "Project IC/Project IC/Hooks/PredictionHook/PredictionHook.h"
         "Project IC/Project IC/Hooks/SurfaceHook/SurfaceHook.cpp"
         "Project IC/Project IC/Hooks/SurfaceHook/SurfaceHook.h"
-        "Project IC/Project IC/Hooks/WndProcHook/WndProcHook.cpp"
-        "Project IC/Project IC/Hooks/WndProcHook/WndProcHook.h"
         "Project IC/Project IC/Hooks/Hooks.cpp"
         "Project IC/Project IC/Hooks/Hooks.h"
         "Project IC/Project IC/SDK/Includes/Classes.h"

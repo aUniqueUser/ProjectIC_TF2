@@ -10,7 +10,7 @@ void C_Hooks::Init()
 		Table.Hook(PreEntity::index, &PreEntity::Hook);
 		Table.Hook(PostEntity::index, &PostEntity::Hook);
 		Table.Hook(ShutDown::index, &ShutDown::Hook);
-		Table.Hook(FrameStageNotify::index, &FrameStageNotify::Hook);
+		Table.Hook(FrameStageNotify::index, (void *) &FrameStageNotify::Hook);
 	}
 
 	if (gInts.ClientMode)
@@ -18,9 +18,9 @@ void C_Hooks::Init()
 		using namespace ClientModeHook;
 
 		Table.Init(gInts.ClientMode);
-		Table.Hook(OverrideView::index, &OverrideView::Hook);
-		Table.Hook(ShouldDrawViewModel::index, &ShouldDrawViewModel::Hook);
-		Table.Hook(CreateMove::index, &CreateMove::Hook);
+		Table.Hook(OverrideView::index,(void *) &OverrideView::Hook);
+		Table.Hook(ShouldDrawViewModel::index, (void *) &ShouldDrawViewModel::Hook);
+		Table.Hook(CreateMove::index, (void *) &CreateMove::Hook);
 	}
 
 	if (gInts.Prediction)
@@ -28,7 +28,7 @@ void C_Hooks::Init()
 		using namespace PredictionHook;
 
 		Table.Init(gInts.Prediction);
-		Table.Hook(RunCommand::index, &RunCommand::Hook);
+		Table.Hook(RunCommand::index, (void *) &RunCommand::Hook);
 	}
 
 	if (gInts.Surface)
@@ -36,8 +36,8 @@ void C_Hooks::Init()
 		using namespace SurfaceHook;
 
 		Table.Init(gInts.Surface);
-		Table.Hook(OnScreenSizeChanged::index, &OnScreenSizeChanged::Hook);
-		Table.Hook(LockCursor::index, &LockCursor::Hook);
+		Table.Hook(OnScreenSizeChanged::index, (void *) &OnScreenSizeChanged::Hook);
+		Table.Hook(LockCursor::index, (void *) &LockCursor::Hook);
 	}
 
 	if (gInts.Panel)
@@ -45,7 +45,7 @@ void C_Hooks::Init()
 		using namespace PanelHook;
 		
 		Table.Init(gInts.Panel);
-		Table.Hook(PaintTraverse::index, &PaintTraverse::Hook);
+		Table.Hook(PaintTraverse::index, (void *) &PaintTraverse::Hook);
 	}
 
 	if (gInts.EngineVGui)
@@ -53,7 +53,7 @@ void C_Hooks::Init()
 		using namespace EngineVGuiHook;
 
 		Table.Init(gInts.EngineVGui);
-		Table.Hook(Paint::index, &Paint::Hook);
+		Table.Hook(Paint::index, (void *) &Paint::Hook);
 	}
 
 	if (gInts.Engine)
@@ -61,7 +61,7 @@ void C_Hooks::Init()
 		using namespace EngineClientHook;
 
 		Table.Init(gInts.Engine);
-		Table.Hook(IsPlayingTimeDemo::index, &IsPlayingTimeDemo::Hook);
+		Table.Hook(IsPlayingTimeDemo::index, (void *) &IsPlayingTimeDemo::Hook);
 	}
 
 	if (gInts.ModelRender)
@@ -69,15 +69,7 @@ void C_Hooks::Init()
 		using namespace ModelRenderHook;
 
 		Table.Init(gInts.ModelRender);
-		Table.Hook(DrawModelExecute::index, &DrawModelExecute::Hook);
-	}
-
-  //if (gInts.WinApi)
-	{
-		while (!Window)
-			Window = FindWindowA(0, "Team Fortress 2");
-
-		WndProcHook::WndProc = (WNDPROC)SetWindowLongPtr(Window, GWL_WNDPROC, (LONG_PTR)WndProcHook::Hook);
+		Table.Hook(DrawModelExecute::index, (void *) &DrawModelExecute::Hook);
 	}
 }
 
@@ -91,8 +83,6 @@ void C_Hooks::Release()
 	EngineVGuiHook::Table.RestoreTable();
 	EngineClientHook::Table.RestoreTable();
 	ModelRenderHook::Table.RestoreTable();
-
-	SetWindowLongPtr(Window, GWL_WNDPROC, (LONG_PTR)WndProcHook::WndProc);
 }
 
 C_Hooks gHooks;

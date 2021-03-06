@@ -6,7 +6,7 @@ class C_MoveHelper
 public:
 	void SetHost(C_BaseEntity *host) 
 	{
-		typedef void(__thiscall *FN)(PVOID, C_BaseEntity *);
+		typedef void(*FN)(void *, C_BaseEntity *);
 		GetVFunc<FN>(this, 0)(this, host);
 	}
 };

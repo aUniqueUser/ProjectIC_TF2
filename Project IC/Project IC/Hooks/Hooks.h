@@ -8,13 +8,9 @@
 #include "EngineVGuiHook/EngineVGuiHook.h"
 #include "EngineClientHook/EngineClientHook.h"
 #include "ModelRenderHook/ModelRenderHook.h"
-#include "WndProcHook/WndProcHook.h"
 
 class C_Hooks
 {
-private:
-	HWND Window = 0;
-
 public:
 	void Init();
 	void Release();

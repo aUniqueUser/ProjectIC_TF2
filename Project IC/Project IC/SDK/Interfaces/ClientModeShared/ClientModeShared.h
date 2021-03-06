@@ -6,7 +6,7 @@ class C_BaseHudChat
 public:
 	void ChatPrintf(int pIndex, const char *fmt, ...)
 	{
-		typedef void *(__thiscall *FN)(PVOID, int, const char *);
+		typedef void *(*FN)(void *, int, const char *);
 		GetVFunc<FN>(this, 19)(this, pIndex, fmt);
 	}
 };

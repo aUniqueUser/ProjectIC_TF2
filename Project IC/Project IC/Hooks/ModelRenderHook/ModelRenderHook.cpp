@@ -4,7 +4,7 @@
 
 constexpr float flDefaultColor[3] = { 1, 1, 1 };
 
-void __stdcall ModelRenderHook::DrawModelExecute::Hook(const DrawModelState_t& pState, const ModelRenderInfo_t& pInfo, matrix3x4* pBoneToWorld)
+void ModelRenderHook::DrawModelExecute::Hook(const DrawModelState_t& pState, const ModelRenderInfo_t& pInfo, matrix3x4* pBoneToWorld)
 {
 	const char* szModel = gInts.ModelInfo->GetModelName(pInfo.m_pModel);
 

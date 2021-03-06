@@ -2,7 +2,7 @@
 
 #include "../../Features/Visuals/Visuals.h"
 
-void __stdcall PanelHook::PaintTraverse::Hook(unsigned int vgui_panel, bool force_repaint, bool allow_force)
+void PanelHook::PaintTraverse::Hook(unsigned int vgui_panel, bool force_repaint, bool allow_force)
 {
 	int nCurPanel = Hash::String(gInts.Panel->GetName(vgui_panel));
 

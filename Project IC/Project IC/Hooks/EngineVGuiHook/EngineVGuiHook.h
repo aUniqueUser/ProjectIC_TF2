@@ -8,8 +8,8 @@ namespace EngineVGuiHook
 
 	namespace Paint
 	{
-		using fn = void(__thiscall *)(C_EngineVGui *, int);
+		using fn = void(*)(C_EngineVGui *, int);
 		constexpr int index = 13;
-		void __stdcall Hook(int mode);
+		void Hook(int mode);
 	}
 }

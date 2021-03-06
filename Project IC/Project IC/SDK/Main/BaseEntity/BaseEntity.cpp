@@ -182,15 +182,15 @@ void C_BaseEntity::UpTickBase()
 
 void C_BaseEntity::UpdateClientSideAnimation()
 {
-	void *renderable = (PVOID)(this + 0x4);
-	typedef void(__thiscall *FN)(PVOID);
+	void *renderable = (void *)(this + 0x4);
+	typedef void(*FN)(void *);
 	return GetVFunc<FN>(renderable, 3)(renderable);
 }
 
 const Vec3 &C_BaseEntity::GetRenderAngles()
 {
-	void *renderable = (PVOID)(this + 0x4);
-	typedef const Vec3 &(__thiscall *FN)(PVOID);
+	void *renderable = (void *)(this + 0x4);
+	typedef const Vec3 &(*FN)(void *);
 	return GetVFunc<FN>(renderable, 2)(renderable);
 }
 
@@ -202,7 +202,7 @@ void C_BaseEntity::SetRenderAngles(const Vec3 &v)
 
 void C_BaseEntity::SetAbsOrigin(const Vec3 &v)
 {
-	typedef void(__thiscall *FN)(C_BaseEntity *, const Vec3 &);
+	typedef void(*FN)(C_BaseEntity *, const Vec3 &);
 	static DWORD dwFN = gPattern.Find("client.dll", "55 8B EC 56 57 8B F1 E8 ? ? ? ? 8B 7D 08 F3 0F 10 07");
 	FN func = (FN)dwFN;
 	func(this, v);
@@ -210,7 +210,7 @@ void C_BaseEntity::SetAbsOrigin(const Vec3 &v)
 
 void C_BaseEntity::SetAbsAngles(const Vec3 &v)
 {
-	/*typedef void(__thiscall *FN)(C_BaseEntity *, const Vec3 &);
+	/*typedef void(*FN)(C_BaseEntity *, const Vec3 &);
 	static DWORD dwFN = gPattern.FindInClient("55 8B EC 83 EC 60 56 57 8B F1 E8 ? ? ? ? 8B 7D 08 F3 0F 10 07 0F 2E 86 ? ? ? ? 9F F6 C4 44 7A 28 F3 0F 10 47 ?");
 	FN func = (FN)dwFN;
 	func(this, v);*/
@@ -221,7 +221,7 @@ void C_BaseEntity::SetAbsAngles(const Vec3 &v)
 
 const Vec3 &C_BaseEntity::GetAbsOrigin()
 {
-	typedef Vec3 &(__thiscall *FN)(PVOID);
+	typedef Vec3 &(*FN)(void *);
 	return GetVFunc<FN>(this, 9)(this);
 }
 
@@ -242,7 +242,7 @@ bool C_BaseEntity::IsPlayerOnSteamFriendList(C_BaseEntity* pEntity)
 
 const Vec3 &C_BaseEntity::GetAbsAngles()
 {
-	typedef Vec3 &(__thiscall *FN)(PVOID);
+	typedef Vec3 &(*FN)(void *);
 	return GetVFunc<FN>(this, 10)(this);
 }
 
@@ -289,7 +289,7 @@ int C_BaseEntity::GetType() {
 
 Vec3 C_BaseEntity::GetShootPos()
 {
-	static auto Weapon_ShootPositionFn = reinterpret_cast<float *(__thiscall *)(PVOID, Vec3 *)>(gPattern.Find("client.dll", "55 8B EC 56 8B 75 08 57 8B F9 56 8B 07 FF 90"));
+	static auto Weapon_ShootPositionFn = reinterpret_cast<float *(*)(void *, Vec3 *)>(gPattern.Find("client.dll", "55 8B EC 56 8B 75 08 57 8B F9 56 8B 07 FF 90"));
 	Vec3 vOut = Vec3();
 	Weapon_ShootPositionFn(this, &vOut);
 	return vOut;
@@ -307,13 +307,13 @@ int C_BaseEntity::GetAmmo()
 
 bool C_BaseEntity::IsBaseCombatWeapon()
 {
-	typedef bool(__thiscall *FN)(PVOID);
+	typedef bool(*FN)(void *);
 	return GetVFunc<FN>(this, 137)(this);
 }
 
 bool C_BaseEntity::IsWearable()
 {
-	typedef bool(__thiscall *FN)(PVOID);
+	typedef bool(*FN)(void *);
 	return GetVFunc<FN>(this, 138)(this);
 }
 
@@ -356,63 +356,63 @@ Vec3 C_BaseEntity::GetWorldSpaceCenter()
 
 model_t *C_BaseEntity::GetModel()
 {
-	PVOID pRenderable = (PVOID)(this + 0x4);
-	typedef model_t *(__thiscall *FN)(PVOID);
+	void * pRenderable = (void *)(this + 0x4);
+	typedef model_t *(*FN)(void *);
 	return GetVFunc<FN>(pRenderable, 9)(pRenderable);
 }
 
 int C_BaseEntity::DrawModel(int flags)
 {
-	void *renderable = (PVOID)(this + 0x4);
-	typedef int(__thiscall *FN)(PVOID, int);
+	void *renderable = (void *)(this + 0x4);
+	typedef int(*FN)(void *, int);
 	return GetVFunc<FN>(renderable, 10)(renderable, flags);
 }
 
 bool C_BaseEntity::SetupBones(matrix3x4 *pBoneToWorldOut, int nMaxBones, int nBoneMask, float fCurrentTime)
 {
-	PVOID pRenderable = (PVOID)(this + 0x4);
-	typedef bool(__thiscall *FN)(PVOID, matrix3x4 *, int, int, float);
+	void * pRenderable = (void *)(this + 0x4);
+	typedef bool(*FN)(void *, matrix3x4 *, int, int, float);
 	return GetVFunc<FN>(pRenderable, 16)(pRenderable, pBoneToWorldOut, nMaxBones, nBoneMask, fCurrentTime);
 }
 
 C_ClientClass *C_BaseEntity::GetClientClass()
 {
-	PVOID pNetworkable = (PVOID)(this + 0x8);
-	typedef C_ClientClass *(__thiscall *FN)(PVOID);
+	void * pNetworkable = (void *)(this + 0x8);
+	typedef C_ClientClass *(*FN)(void *);
 	return GetVFunc<FN>(pNetworkable, 2)(pNetworkable);
 }
 
 bool C_BaseEntity::IsDormant()
 {
-	PVOID pNetworkable = (PVOID)(this + 0x8);
-	typedef bool(__thiscall *FN)(PVOID);
+	void * pNetworkable = (void *)(this + 0x8);
+	typedef bool(*FN)(void *);
 	return GetVFunc<FN>(pNetworkable, 8)(pNetworkable);
 }
 
 int C_BaseEntity::GetIndex()
 {
-	PVOID pNetworkable = (PVOID)(this + 0x8);
-	typedef int(__thiscall *FN)(PVOID);
+	void * pNetworkable = (void *)(this + 0x8);
+	typedef int(*FN)(void *);
 	return GetVFunc<FN>(pNetworkable, 9)(pNetworkable);
 }
 
 void C_BaseEntity::GetRenderBounds(Vec3 &vMins, Vec3 &vMaxs)
 {
-	PVOID pRenderable = (PVOID)(this + 0x4);
-	typedef void(__thiscall *FN)(PVOID, Vec3 &, Vec3 &);
+	void * pRenderable = (void *)(this + 0x4);
+	typedef void(*FN)(void *, Vec3 &, Vec3 &);
 	GetVFunc<FN>(pRenderable, 20)(pRenderable, vMins, vMaxs);
 }
 
 matrix3x4 &C_BaseEntity::GetRgflCoordinateFrame()
 {
-	PVOID pRenderable = (PVOID)(this + 0x4);
-	typedef matrix3x4 &(__thiscall *FN)(PVOID);
+	void * pRenderable = (void *)(this + 0x4);
+	typedef matrix3x4 &(*FN)(void *);
 	return GetVFunc<FN>(pRenderable, 34)(pRenderable);
 }
 
 Vec3 C_BaseEntity::GetVelocity()
 {
-	typedef void(__thiscall *EstimateAbsVelocityFn)(C_BaseEntity *, Vec3 &);
+	typedef void(*EstimateAbsVelocityFn)(C_BaseEntity *, Vec3 &);
 	static DWORD dwFn = gPattern.Find("client.dll", "E8 ? ? ? ? F3 0F 10 4D ? 8D 85 ? ? ? ? F3 0F 10 45 ? F3 0F 59 C9 56 F3 0F 59 C0 F3 0F 58 C8 0F 2F 0D ? ? ? ? 76 07") + 0x1;
 	static DWORD dwEstimate = ((*(PDWORD)(dwFn)) + dwFn + 0x4);
 	EstimateAbsVelocityFn vel = (EstimateAbsVelocityFn)dwEstimate;
@@ -423,7 +423,7 @@ Vec3 C_BaseEntity::GetVelocity()
 
 int C_BaseEntity::GetMaxHealth()
 {
-	typedef int(__thiscall *FN)(PVOID);
+	typedef int(*FN)(void *);
 	return GetVFunc<FN>(this, 107)(this);
 }
 
@@ -731,7 +731,7 @@ void C_BaseEntity::RemoveEffect(byte Effect)
 	*reinterpret_cast<byte *>(this + 0x7C) &= ~Effect;
 
 	if (Effect == EF_NODRAW) {
-		static auto AddToLeafSystemFn = reinterpret_cast<int(__thiscall *)(PVOID, int)>(gPattern.Find("client.dll", "55 8B EC 56 FF 75 08 8B F1 B8"));
+		static auto AddToLeafSystemFn = reinterpret_cast<int(*)(void *, int)>(gPattern.Find("client.dll", "55 8B EC 56 FF 75 08 8B F1 B8"));
 
 		if (AddToLeafSystemFn)
 			AddToLeafSystemFn(this, RENDER_GROUP_OPAQUE_ENTITY);
@@ -747,7 +747,7 @@ bool C_BaseEntity::IsGlowEnabled() {
 }
 
 void C_BaseEntity::UpdateGlowEffect() {
-	typedef void(__thiscall *FN)(PVOID);
+	typedef void(*FN)(void *);
 	return GetVFunc<FN>(this, 226)(this);
 }
 

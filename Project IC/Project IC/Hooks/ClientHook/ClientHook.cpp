@@ -1,27 +1,22 @@
 #include "ClientHook.h"
 
-void __stdcall ClientHook::PreEntity::Hook(char const *szMapName)
+void ClientHook::PreEntity::Hook(char const *szMapName)
 {
 	Table.Original<fn>(index)(gInts.Client, szMapName);
-
-	//...
 }
 
-void __stdcall ClientHook::PostEntity::Hook()
+void ClientHook::PostEntity::Hook()
 {
 	Table.Original<fn>(index)(gInts.Client);
-
-	//...
 }
 
-void __stdcall ClientHook::ShutDown::Hook()
+void ClientHook::ShutDown::Hook()
 {
 	Table.Original<fn>(index)(gInts.Client);
-
 	gEntCache.Clear();
 }
 
-void __stdcall ClientHook::FrameStageNotify::Hook(ClientFrameStage_t FrameStage)
+void ClientHook::FrameStageNotify::Hook(ClientFrameStage_t FrameStage)
 {
 	Table.Original<fn>(index)(gInts.Client, FrameStage);
 

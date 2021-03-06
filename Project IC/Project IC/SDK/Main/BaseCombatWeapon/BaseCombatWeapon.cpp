@@ -3,7 +3,7 @@
 
 WeaponData_t C_BaseCombatWeapon::GetWeaponData()
 {
-	using Data = CTFWeaponInfo * (__cdecl *)(int);
+	using Data = CTFWeaponInfo * (*)(int);
 	static int offset = gPattern.Find("client.dll", "55 8B EC 66 8B ? ? 66 3B 05 ? ? ? ? 73");
 	static auto get_tf_weapon_data_fn = reinterpret_cast<Data>(offset);
 	return get_tf_weapon_data_fn(GetWeaponID())->m_WeaponData[0];
@@ -11,7 +11,7 @@ WeaponData_t C_BaseCombatWeapon::GetWeaponData()
 
 int C_BaseCombatWeapon::GetWeaponID()
 {
-	typedef int(__thiscall *FN)(void *);
+	typedef int(*FN)(void *);
 	return GetVFunc<FN>(this, 377)(this);
 }
 
@@ -27,7 +27,7 @@ int C_BaseCombatWeapon::GetClip2()
 
 int C_BaseCombatWeapon::GetSlot()
 {
-	typedef int(__thiscall *FN)(PVOID);
+	typedef int(*FN)(void *);
 	return GetVFunc<FN>(this, 327)(this);
 }
 
@@ -53,19 +53,19 @@ float C_BaseCombatWeapon::GetLastFireTime()
 
 float C_BaseCombatWeapon::GetSwingRange(C_BaseEntity *pLocal)
 {
-	typedef int(__thiscall *FN)(C_BaseEntity *);
+	typedef int(*FN)(C_BaseEntity *);
 	return (static_cast<float>(GetVFunc<FN>(this, 451)(pLocal)));
 }
 
 bool C_BaseCombatWeapon::DoSwingTrace(C_GameTrace &Trace)
 {
-	typedef int(__thiscall *FN)(C_GameTrace &);
+	typedef int(*FN)(C_GameTrace &);
 	return GetVFunc<FN>(this, 453)(Trace);
 }
 
 bool C_BaseCombatWeapon::WillCrit()
 {
-	typedef bool(__thiscall* FN)(C_BaseCombatWeapon*);
+	typedef bool(*FN)(C_BaseCombatWeapon*);
 
 	static DWORD dwFN = gPattern.Find("client.dll",
 	"55 8B EC 83 EC 18 56 57 6A 00 68 ? ? ? ? 68 ? ? ? ? 6A 00 8B F9 E8 ? ? ? ? 50 E8 ? ? ? ? 8B F0 83 C4 14 89 75 EC");
@@ -75,19 +75,19 @@ bool C_BaseCombatWeapon::WillCrit()
 
 Vec3 &C_BaseCombatWeapon::GetBulletSpread()
 {
-	typedef Vec3 &(__thiscall *FN)(PVOID);
+	typedef Vec3 &(*FN)(void *);
 	return GetVFunc<FN>(this, 286)(this);
 }
 
 int C_BaseCombatWeapon::GetDamageType()
 {
-	typedef int(__thiscall *FN)(void *);
+	typedef int(*FN)(void *);
 	return GetVFunc<FN>(this, 378)(this);
 }
 
 bool C_BaseCombatWeapon::CanFireCriticalShot(bool bHeadShot)
 {
-	typedef bool(__thiscall *FN)(void *, bool, C_BaseEntity *);
+	typedef bool(*FN)(void *, bool, C_BaseEntity *);
 	return GetVFunc<FN>(this, 421)(this, bHeadShot, nullptr);
 }
 

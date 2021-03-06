@@ -6,14 +6,14 @@
 #include "../../Features/Visuals/Visuals.h"
 #include "../../Features/Misc/Misc.h"
 
-void __stdcall ClientModeHook::OverrideView::Hook(C_ViewSetup* pView)
+void ClientModeHook::OverrideView::Hook(C_ViewSetup* pView)
 {
 	Table.Original<fn>(index)(gInts.ClientMode, pView);
 
 	gVisuals.DoFov(pView);
 }
 
-bool __stdcall ClientModeHook::ShouldDrawViewModel::Hook()
+bool ClientModeHook::ShouldDrawViewModel::Hook()
 {
 	C_BaseEntity* pLocal = gEntCache.pLocal;
 
@@ -26,15 +26,14 @@ bool __stdcall ClientModeHook::ShouldDrawViewModel::Hook()
 	return Table.Original<fn>(index)(gInts.ClientMode);
 }
 
-bool __stdcall ClientModeHook::CreateMove::Hook(float input_sample_frametime, C_UserCmd* pCmd)
+bool ClientModeHook::CreateMove::Hook(float input_sample_frametime, C_UserCmd* pCmd)
 {
 	fn original = Table.Original<fn>(index);
 
 	if (!pCmd || !pCmd->command_number)
 		return original(gInts.ClientMode, input_sample_frametime, pCmd);
 
-	uintptr_t _bp; __asm mov _bp, ebp;
-	bool* pSendPacket = (bool*)(***(uintptr_t***)_bp - 0x1);
+	bool* pSendPacket = reinterpret_cast<bool *>((uintptr_t) __builtin_frame_address(1) - 8);
 
 	{
 		C_BaseEntity* pLocal = gEntCache.pLocal;

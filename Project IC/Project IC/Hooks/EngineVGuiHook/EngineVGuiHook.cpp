@@ -11,15 +11,21 @@
 #include "../../SDK/Includes/icons.h"
 
 
-void __stdcall EngineVGuiHook::Paint::Hook(int mode)
+void EngineVGuiHook::Paint::Hook(int mode)
 {
 	if (!gScreenSize.w || !gScreenSize.h)
 		gScreenSize.Update();
 
-	static auto StartDrawing = reinterpret_cast<void(__thiscall*)(void*)>(gPattern.Find("vguimatsurface.dll", "55 8B EC 64 A1 ? ? ? ? 6A FF 68 ? ? ? ? 50 64 89 25 ? ? ? ? 83 EC 14"));
-	static auto FinishDrawing = reinterpret_cast<void(__thiscall*)(void*)>(gPattern.Find("vguimatsurface.dll", "55 8B EC 6A FF 68 ? ? ? ? 64 A1 ? ? ? ? 50 64 89 25 ? ? ? ? 51 56 6A 00"));
+    typedef void (*FN)(C_Surface *);
 
-	//HACK: for some reason we need to do this
+    static auto StartDrawing  = gPattern.Find("vguimatsurface.dll", "55 8B EC 64 A1 ? ? ? ? 6A FF 68 ? ? ? ? 50 64 89 25 ? ? ? ? 83 EC 14");
+	static auto FinishDrawing = gPattern.Find("vguimatsurface.dll", "55 8B EC 6A FF 68 ? ? ? ? 64 A1 ? ? ? ? 50 64 89 25 ? ? ? ? 51 56 6A 00");
+
+    FN StartDrawing_fn  = FN(StartDrawing);
+    FN FinishDrawing_fn = FN(FinishDrawing);
+
+
+    //HACK: for some reason we need to do this
 	{
 		static bool bInitIcons = false;
 
@@ -47,7 +53,7 @@ void __stdcall EngineVGuiHook::Paint::Hook(int mode)
 			}
 		}
 
-		StartDrawing(gInts.Surface);
+		StartDrawing_fn(gInts.Surface);
 		{
 			gESP.Run();
 			gSpectatorList.Run();
@@ -56,7 +62,7 @@ void __stdcall EngineVGuiHook::Paint::Hook(int mode)
 			gMenu.Run();
 			gRadar.Paint();
 		}
-		FinishDrawing(gInts.Surface);
+		FinishDrawing_fn(gInts.Surface);
 	}
 }
 

@@ -2,7 +2,7 @@
 
 #include "Features/Visuals/Chams/Chams.h"
 
-DWORD WINAPI MainThread(LPVOID lpParam)
+DWORD WINAPI MainThread(Lvoid * lpParam)
 {
 	gSteam.Init();
 	gInts.Init();
@@ -54,7 +54,7 @@ DWORD WINAPI MainThread(LPVOID lpParam)
 	FreeLibraryAndExitThread(static_cast<HMODULE>(lpParam), EXIT_SUCCESS);
 }
 
-BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, Lvoid * lpvReserved)
 {
 	switch (fdwReason)
 	{

@@ -42,7 +42,7 @@ public:
 class C_Render {
 public:
 	const VMatrix &WorldToScreenMatrix() {
-		typedef const VMatrix &(__thiscall *FN)(PVOID);
+		typedef const VMatrix &(*FN)(void *);
 		return GetVFunc<FN>(this, 13)(this);
 	}
 };
@@ -51,15 +51,15 @@ class C_RenderView
 {
 public:
 	void SetBlend(float flBlend) {
-		typedef void(__thiscall* FN)(PVOID, float);
+		typedef void( FN)(void *, float);
 		return GetVFunc<FN>(this, 4)(this, flBlend);
 	}
 	void SetColorModulation(const float* flColor) {
-		typedef void(__thiscall* FN)(PVOID, const float*);
+		typedef void( FN)(void *, const float*);
 		return GetVFunc<FN>(this, 6)(this, flColor);
 	}
 	void GetMatricesForView(const C_ViewSetup &view, VMatrix *pWorldToView, VMatrix *pViewToProjection, VMatrix *pWorldToProjection, VMatrix *pWorldToPixels) {
-		typedef void(__thiscall *FN)(PVOID, const C_ViewSetup &, VMatrix *, VMatrix *, VMatrix *, VMatrix *);
+		typedef void(*FN)(void *, const C_ViewSetup &, VMatrix *, VMatrix *, VMatrix *, VMatrix *);
 		GetVFunc<FN>(this, 50)(this, view, pWorldToView, pViewToProjection, pWorldToProjection, pWorldToPixels);
 	}
 };
