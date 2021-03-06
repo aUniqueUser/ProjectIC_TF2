@@ -1,0 +1,3 @@
+/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/CMakeFiles/ProjectIC_TF2.dir

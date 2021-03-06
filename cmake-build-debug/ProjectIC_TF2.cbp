@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ProjectIC_TF2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProjectIC_TF2">
+				<Option output="/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/ProjectIC_TF2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Aimbot"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Menu"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Menu/Input"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Misc"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Prediction"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerShoot"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerStab"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Chams"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/ESP"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Radar"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/SpectatorList"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/SpyWarning"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ClientHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ClientModeHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/EngineClientHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/EngineVGuiHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ModelRenderHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/PanelHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/PredictionHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/SurfaceHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/WndProcHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/BaseClientDLL"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientDLLSharedAppSystems"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientEntityList"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientModeShared"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ConVar"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/DebugOverlay"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineClient"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineTrace"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineVGui"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GameEvent"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GameMovement"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GlobalVarsBase"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Material"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ModelInfo"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ModelRender"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/MoveHelper"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/NetChannel"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Panel"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Prediction"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/RenderView"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Surface"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ViewRender"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseCombatWeapon"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity/AnimState"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseObject"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/ConVars"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/DrawUtils"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/EntityCache"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/GlobalInfo"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/VisCheck"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/NetVars"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Color"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Hash"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Interface"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Math"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Pattern"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/UtlVector"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/VFunc"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/VMT"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/../../../../include/c++/10.2.1"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/../../../../include/c++/10.2.1/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/../../../../include/c++/10.2.1/backward"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjectIC_TF2"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProjectIC_TF2/fast">
+				<Option output="/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/ProjectIC_TF2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Aimbot"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Menu"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Menu/Input"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Misc"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Prediction"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerShoot"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerStab"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Chams"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/ESP"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Radar"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/SpectatorList"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/SpyWarning"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ClientHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ClientModeHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/EngineClientHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/EngineVGuiHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ModelRenderHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/PanelHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/PredictionHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/SurfaceHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/WndProcHook"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/BaseClientDLL"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientDLLSharedAppSystems"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientEntityList"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientModeShared"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ConVar"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/DebugOverlay"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineClient"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineTrace"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineVGui"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GameEvent"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GameMovement"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GlobalVarsBase"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Material"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ModelInfo"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ModelRender"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/MoveHelper"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/NetChannel"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Panel"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Prediction"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/RenderView"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Surface"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ViewRender"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseCombatWeapon"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity/AnimState"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseObject"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/ConVars"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/DrawUtils"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/EntityCache"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/GlobalInfo"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/VisCheck"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/NetVars"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Color"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Hash"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Interface"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Math"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Pattern"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/UtlVector"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/VFunc"/>
+					<Add directory="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/VMT"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/../../../../include/c++/10.2.1"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/../../../../include/c++/10.2.1/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/../../../../include/c++/10.2.1/backward"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib64/gcc/x86_64-unknown-linux-gnu/10.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjectIC_TF2/fast"/>
+					<CompileFile command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j4 -f &quot;/home/sz/Desktop/ProjectIC_TF2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/DLLMain.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Aimbot/Aimbot.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Aimbot/Aimbot.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Menu/Input/Input.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Menu/Input/Input.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Menu/Menu.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Menu/Menu.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Misc/Misc.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Misc/Misc.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Prediction/Prediction.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Prediction/Prediction.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerBot.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerBot.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerShoot/TriggerShoot.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerShoot/TriggerShoot.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerStab/TriggerStab.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Triggerbot/TriggerStab/TriggerStab.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Chams/Chams.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Chams/Chams.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/ESP/ESP.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/ESP/ESP.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Radar/Radar.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Radar/Radar.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/SpectatorList/SpectatorList.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/SpectatorList/SpectatorList.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/SpyWarning/SpyWarning.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/SpyWarning/SpyWarning.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Visuals.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Features/Visuals/Visuals.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ClientHook/ClientHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ClientHook/ClientHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ClientModeHook/ClientModeHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ClientModeHook/ClientModeHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/EngineClientHook/EngineClientHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/EngineClientHook/EngineClientHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/EngineVGuiHook/EngineVGuiHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/EngineVGuiHook/EngineVGuiHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/Hooks.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/Hooks.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ModelRenderHook/ModelRenderHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/ModelRenderHook/ModelRenderHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/PanelHook/PanelHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/PanelHook/PanelHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/PredictionHook/PredictionHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/PredictionHook/PredictionHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/SurfaceHook/SurfaceHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/SurfaceHook/SurfaceHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/WndProcHook/WndProcHook.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Hooks/WndProcHook/WndProcHook.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/Classes.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/Const.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/Enums.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/Includes.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/MD5.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/MD5.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/Structs.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/dt_common.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/dt_recv.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Includes/icons.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/BaseClientDLL/BaseClientDLL.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientDLLSharedAppSystems/ClientDLLSharedAppSystems.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientEntityList/ClientEntityList.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ClientModeShared/ClientModeShared.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ConVar/ConVar.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ConVar/ConVar.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/DebugOverlay/DebugOverlay.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineClient/EngineClient.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineTrace/EngineTrace.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/EngineVGui/EngineVGui.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GameEvent/GameEvent.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GameMovement/GameMovement.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/GlobalVarsBase/GlobalVarsBase.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Interfaces.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Interfaces.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Material/Material.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ModelInfo/ModelInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ModelRender/ModelRender.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/MoveHelper/MoveHelper.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/NetChannel/NetChannel.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/NetChannel/NetChannel.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Panel/Panel.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Prediction/Prediction.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/RenderView/RenderView.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/AppTicketCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/AppsCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/BillingCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/BridgeCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/CCallback.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/CGameID.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/CSteamAPIContext.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/CSteamID.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ClientCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ContentServerCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ControllerCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ECurrencyCode.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/EResult.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamAppUpdateStatsQueryType.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamBufferMethod.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamError.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamFindFilter.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamNotify.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamPaymentCardType.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamSeekMethod.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamServerType.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamSubscriptionBillingInfoType.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ESteamSubscriptionStatus.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/EVoiceResult.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/FriendGameInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/FriendsCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/GameCoordinatorCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/GameServerCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/GameServerStatsCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/GameStatsCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/HTTPCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientAppManager.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientApps.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientAudio.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientBilling.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientConfigStore.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientContentServer.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientDepotBuilder.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientDeviceAuth.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientEngine.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientFriends.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientGameCoordinator.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientGameServer.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientGameServerStats.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientGameStats.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientHTTP.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientInventory.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientMasterServerUpdater.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientMatchmaking.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientMatchmakingServers.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientMusic.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientNetworkDeviceManager.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientNetworking.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientProductBuilder.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientRemoteStorage.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientScreenshots.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientShortcuts.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientStreamClient.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientStreamLauncher.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientUGC.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientUnifiedMessages.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientUser.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientUserStats.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/IClientUtils.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteam003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteam004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteam005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteam006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteam2Bridge001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteam2Bridge002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamAppList001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamAppTicket001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamApps001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamApps002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamApps003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamApps004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamApps005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamApps006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamApps007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamBilling001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamBilling002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient008.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient009.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient010.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient011.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient012.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient013.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient014.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient015.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient016.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamClient017.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamContentServer001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamContentServer002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamController001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends008.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends009.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends010.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends011.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends012.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends013.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends014.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamFriends015.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameCoordinator001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer008.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer009.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer010.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer011.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServer012.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameServerStats001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamGameStats001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamHTTP001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamHTTP002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamInventory001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMasterServerUpdater001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking008.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmaking009.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmakingServers001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMatchmakingServers002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamMusic001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamNetworking001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamNetworking002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamNetworking003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamNetworking004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamNetworking005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamOAuth001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage008.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage009.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage010.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage011.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamRemoteStorage012.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamScreenshots001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamScreenshots002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamStreamLauncher001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUGC001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUGC002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUGC003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUnifiedMessages001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser008.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser009.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser010.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser011.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser012.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser013.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser014.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser015.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser016.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUser017.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats008.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats009.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats010.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUserStats011.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUtils001.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUtils002.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUtils003.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUtils004.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUtils005.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUtils006.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ISteamUtils007.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/Interface_OSW.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/InventoryCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/MasterServerUpdaterCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/MatchMakingKeyValuePair.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/MatchmakingCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/MatchmakingServersCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/MusicCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/NetworkingCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/OAuthCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/POSIXLibrary.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/RemoteStorageCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/ScreenshotsCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/Steam.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/SteamAPI.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/SteamSalt.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/SteamTypes.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/Steamclient.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/SteamclientAPI.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/Steamworks.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/StreamLauncherCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamApp.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamAppDependencyInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamAppLaunchOption.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamAppStats.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamAppVersion.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamDiscountQualifier.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamElemInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamError.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamExternalBillingInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamGlobalUserID.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamOfflineStatus.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamPaymentCardInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamPaymentCardReceiptInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamPrepurchaseInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamPrepurchaseReceiptInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamProgress.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamSplitLocalUserID.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamSubscription.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamSubscriptionBillingInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamSubscriptionDiscount.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamSubscriptionReceipt.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamSubscriptionStats.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/TSteamUpdateStats.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/UGCCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/UnifiedMessagesCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/UserCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/UserStatsCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/UtilsCommon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/Win32Library.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/gameserveritem.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Steam/servernetadr.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/Surface/Surface.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Interfaces/ViewRender/ViewRender.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseCombatWeapon/BaseCombatWeapon.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseCombatWeapon/BaseCombatWeapon.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity/AnimState/Activity.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity/AnimState/BaseAnimatingOverlay.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity/AnimState/MultiPlayerAnimState.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity/AnimState/TFPlayerAnimState.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity/BaseEntity.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseEntity/BaseEntity.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseObject/BaseObject.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/BaseObject/BaseObject.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/ConVars/ConVars.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/ConVars/ConVars.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/DrawUtils/DrawUtils.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/DrawUtils/DrawUtils.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/EntityCache/EntityCache.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/EntityCache/EntityCache.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/GlobalInfo/GlobalInfo.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/VisCheck/VisCheck.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/Main/VisCheck/VisCheck.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/NetVars/NetVars.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/NetVars/NetVars.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/SDK/SDK.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Color/Color.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Hash/Hash.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Hash/Hash.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Interface/Interface.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Interface/Interface.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Math/Math.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Pattern/Pattern.cpp">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Pattern/Pattern.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/Utils.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/UtlVector/UtlVector.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/VFunc/VFunc.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/Project IC/Project IC/Utils/VMT/VMT.h">
+			<Option target="ProjectIC_TF2"/>
+		</Unit>
+		<Unit filename="/home/sz/Desktop/ProjectIC_TF2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
