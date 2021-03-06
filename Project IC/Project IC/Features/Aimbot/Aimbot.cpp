@@ -1,4 +1,5 @@
 #include "Aimbot.h"
+#include "Input.h"
 
 #include "../Menu/Menu.h"
 #include "../Visuals/Visuals.h"
@@ -76,20 +77,11 @@ bool C_Aimbot::IsAimKeyDown()
 {
 	switch (nAimKey)
 	{
-		case 0: {
-			return (GetAsyncKeyState(VK_SHIFT) & 0x8000);
-		}
-		case 1: {
-			return (GetAsyncKeyState(VK_XBUTTON2) & 0x8000);
-		}
-
-			  //...
-
-		default: {
-			return false;
-		}
+		case 0:
+			return gInput.IsKeyDown(SDL_BUTTON_MIDDLE);
+		case 1:
+			return true;
 	}
-
 	return false;
 }
 

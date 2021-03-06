@@ -74,7 +74,7 @@ public:
 	Vec3 GetVelocity();
 	Vec3 GetEyeAngles();
 	Vec3 GetPunchAngles();
-	BYTE GetLifeState();
+	byte GetLifeState();
 	byte GetWaterLevel();
 	C_BaseEntity *FirstMoveChild();
 	C_BaseEntity *NextMovePeer();

@@ -179,14 +179,14 @@ public:
 	virtual unsigned int RequestFile(const char* filename) = 0;
 	virtual float GetTimeSinceLastReceived(void) const = 0; // get time since last received packet in seconds
 
-	virtual void SetMaxBufferSize(bool bReliable, int nBYTEs, bool bVoice = false) = 0;
+	virtual void SetMaxBufferSize(bool bReliable, int nbytes, bool bVoice = false) = 0;
 
 	virtual bool IsNull() const = 0;
 	virtual int GetNumBitsWritten(bool bReliable) = 0;
 	virtual void SetInterpolationAmount(float flInterpolationAmount) = 0;
 	virtual void SetRemoteFramerate(float flFrameTime, float flFrameTimeStdDeviation) = 0;
 
-	// Max # of payload BYTEs before we must split/fragment the packet
+	// Max # of payload bytes before we must split/fragment the packet
 	virtual void SetMaxRoutablePayloadSize(int nSplitSize) = 0;
 	virtual int GetMaxRoutablePayloadSize() = 0;
 
@@ -255,11 +255,11 @@ public: // netchan structurs
 		FileHandle_t file;				// open file handle
 		char filename[MAX_OS_PATH];		// filename
 		char* buffer;					// if NULL it's a file
-		unsigned int BYTEs;				// size in BYTEs
+		unsigned int bytes;				// size in bytes
 		unsigned int bits;				// size in bits
 		unsigned int transferID;		// only for files
 		bool isCompressed;				// true if data is bzip compressed
-		unsigned int nUncompressedSize; // full size in BYTEs
+		unsigned int nUncompressedSize; // full size in bytes
 		bool asTCP;						// send as TCP stream
 		int numFragments;				// number of total fragments
 		int ackedFragments;				// number of fragments send & acknowledged
@@ -292,27 +292,27 @@ public: // netchan structurs
 	{
 		// Data received from server
 		float time;		   // net_time received/send
-		int size;		   // total size in BYTEs
+		int size;		   // total size in bytes
 		float latency;	 // raw ping for this packet, not cleaned. set when acknowledged otherwise -1.
 		float avg_latency; // averaged ping for this packet
 		bool valid;		   // false if dropped, lost, flushed
 		int choked;		   // number of previously chocked packets
 		int dropped;
 		float m_flInterpolationAmount;
-		unsigned short msggroups[C_NetChannelInfo::TOTAL]; // received BYTEs for each message group
+		unsigned short msggroups[C_NetChannelInfo::TOTAL]; // received bytes for each message group
 	} netframe_t;
 
 	typedef struct
 	{
 		float nextcompute;		  // Time when we should recompute k/sec data
-		float avgBYTEspersec;	 // average BYTEs/sec
+		float avgbytespersec;	 // average bytes/sec
 		float avgpacketspersec;   // average packets/sec
 		float avgloss;			  // average packet loss [0..1]
 		float avgchoke;			  // average packet choke [0..1]
 		float avglatency;		  // average ping, not cleaned
 		float latency;			  // current ping, more accurate also more jittering
 		int totalpackets;		  // total processed packets
-		int totalBYTEs;			  // total processed BYTEs
+		int totalbytes;			  // total processed bytes
 		int currentindex;		  // current frame index
 		netframe_t frames[64];	// frame history
 		netframe_t* currentframe; // current frame
@@ -338,14 +338,14 @@ public:
 
 						  // Reliable data buffer, send which each packet (or put in waiting list)
 						  //bf_write m_StreamReliable;
-						  //CUtlMemory<BYTE> m_ReliableDataBuffer;
+						  //CUtlMemory<byte> m_ReliableDataBuffer;
 
 						  // unreliable message buffer, cleared which each packet
 						  //bf_write m_StreamUnreliable;
-						  //CUtlMemory<BYTE> m_UnreliableDataBuffer;
+						  //CUtlMemory<byte> m_UnreliableDataBuffer;
 
 						  //bf_write m_StreamVoice;
-						  //CUtlMemory<BYTE> m_VoiceDataBuffer;
+						  //CUtlMemory<byte> m_VoiceDataBuffer;
 
 						  // don't use any vars below this (only in net_ws.cpp)
 
@@ -363,7 +363,7 @@ public:
 	double connect_time;
 
 	// Bandwidth choke
-	// BYTEs per second
+	// bytes per second
 	int m_Rate;
 	// If realtime > cleartime, free to send next packet
 	double m_fClearTime;
@@ -381,13 +381,13 @@ public:
 	int m_SteamType;			   // STREAM_CMD_*
 	int m_StreamSeqNr;			   // each blob send of TCP as an increasing ID
 	int m_StreamLength;			   // total length of current stream blob
-	int m_StreamReceived;		   // length of already received BYTEs
+	int m_StreamReceived;		   // length of already received bytes
 								   //char m_SteamFile[MAX_OSPATH];  // if receiving file, this is it's name
-								   //CUtlMemory<BYTE> m_StreamData; // Here goes the stream data (if not file). Only allocated if we're going to use it.
+								   //CUtlMemory<byte> m_StreamData; // Here goes the stream data (if not file). Only allocated if we're going to use it.
 
 								   // packet history
 	netflow_t m_DataFlow[MAX_FLOWS];
-	int m_MsgStats[C_NetChannelInfo::TOTAL]; // total BYTEs for each message group
+	int m_MsgStats[C_NetChannelInfo::TOTAL]; // total bytes for each message group
 
 	int m_PacketDrop; // packets lost before getting last update (was global net_drop)
 

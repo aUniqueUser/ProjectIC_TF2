@@ -8,8 +8,8 @@ class IMaterial;
 class IClientRenderable;
 
 #define MAX_VIS_LEAVES				32
-#define MAX_AREA_STATE_BYTES        32
-#define MAX_AREA_PORTAL_STATE_BYTES 24
+#define MAX_AREA_STATE_byteS        32
+#define MAX_AREA_PORTAL_STATE_byteS 24
 
 #define	SIDE_FRONT					0
 #define	SIDE_BACK					1
@@ -274,8 +274,8 @@ public:
 	virtual bool			DoesBoxIntersectWaterVolume(const Vec3& mins, const Vec3& maxs, int leafWaterDataID) = 0;
 
 	virtual void			SetAreaState(
-		unsigned char chAreaBits[MAX_AREA_STATE_BYTES],
-		unsigned char chAreaPortalBits[MAX_AREA_PORTAL_STATE_BYTES]) = 0;
+		unsigned char chAreaBits[MAX_AREA_STATE_byteS],
+		unsigned char chAreaPortalBits[MAX_AREA_PORTAL_STATE_byteS]) = 0;
 
 	// See i
 	virtual void			VGui_Paint(int mode) = 0;

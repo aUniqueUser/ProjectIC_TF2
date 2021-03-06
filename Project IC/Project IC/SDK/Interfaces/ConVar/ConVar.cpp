@@ -161,7 +161,6 @@ void ConVar::InternalSetValue(const char *value)
 
 void ConVar::ChangeStringValue(const char *tempVal, float flOldValue)
 {
-	UNREFERENCED_PARAMETER(flOldValue);
 	int len = strlen(tempVal) + 1;
 
 	if (len > m_Value.m_StringLength)
@@ -237,7 +236,7 @@ void ConVar::InternalSetIntValue(int nValue)
 	}
 }
 
-void ConVar::InternalSetColorValue(DWORD cValue)
+void ConVar::InternalSetColorValue(uintptr_t cValue)
 {
 	int color = (int)cValue;
 	InternalSetIntValue(color);
@@ -283,7 +282,7 @@ void ConVar::SetValue(int value)
 	m_pParent->InternalSetIntValue(value);
 }
 
-void ConVar::SetValue(DWORD value)
+void ConVar::SetValue(uintptr_t value)
 {
 	m_pParent->InternalSetColorValue(value);
 }

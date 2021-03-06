@@ -5,7 +5,8 @@
 //===========================================================================//
 
 #include "MD5.h"
-#include <Windows.h>
+#include <cstdio>
+#include <cstring>
 
 // The four core functions - F1 is optimized somewhat
 // #define F1(x, y, z) (x & y | ~x & z)
@@ -31,7 +32,7 @@
 
 static void MD5Transform(unsigned int buf[4], unsigned int const in[16])
 {
-	register unsigned int a, b, c, d;
+    unsigned int a, b, c, d;
 
 	a = buf[0];
 	b = buf[1];

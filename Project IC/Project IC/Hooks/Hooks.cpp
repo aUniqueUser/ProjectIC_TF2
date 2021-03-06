@@ -7,9 +7,9 @@ void C_Hooks::Init()
 		using namespace ClientHook;
 
 		Table.Init(gInts.Client);
-		Table.Hook(PreEntity::index, &PreEntity::Hook);
-		Table.Hook(PostEntity::index, &PostEntity::Hook);
-		Table.Hook(ShutDown::index, &ShutDown::Hook);
+		Table.Hook(PreEntity::index, (void *) &PreEntity::Hook);
+		Table.Hook(PostEntity::index, (void *) &PostEntity::Hook);
+		Table.Hook(ShutDown::index, (void *) &ShutDown::Hook);
 		Table.Hook(FrameStageNotify::index, (void *) &FrameStageNotify::Hook);
 	}
 

@@ -1,13 +1,5 @@
 #include "SpectatorList.h"
 
-std::wstring C_SpectatorList::ConvertUtf8ToWide(const std::string &str)
-{
-	int count = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), NULL, 0);
-	std::wstring wstr(count, 0);
-	MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), &wstr[0], count);
-	return wstr;
-}
-
 bool C_SpectatorList::GetSpectators(C_BaseEntity *pLocal)
 {
 	Spectators.clear();
@@ -89,10 +81,8 @@ void C_SpectatorList::Run()
 			int nDrawX = (gScreenSize.w / 2);
 			int nDrawY = (((gScreenSize.h / 2) + 50) + (nTall * nDrawn));
 
-			//this is gay we need that var stuff in string draw func for wstrings
-			std::wstring name = ConvertUtf8ToWide(Spectator.sName);
-			std::wstring mode = ConvertUtf8ToWide(Spectator.sMode);
-			std::wstring wstr = (std::wstring(L"[") + mode + std::wstring(L"]") + std::wstring(L" ") + name);
+			std::wstring wstr = (std::wstring(L"[") + Util::ConvertUTF8ToWide(Spectator.sMode)
+			        + std::wstring(L"]") + std::wstring(L" ") + Util::ConvertUTF8ToWide(Spectator.sName));
 
 			gDraw.StringCenterW(FONT_ESP_NAME_OUTLINED, nDrawX, nDrawY, SpectatorColor, wstr.c_str());
 

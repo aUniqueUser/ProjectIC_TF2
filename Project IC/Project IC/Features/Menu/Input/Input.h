@@ -1,31 +1,16 @@
 #pragma once
-#include "../../../SDK/Includes/Includes.h"
 
-enum struct EKeyState {
-	NONE,
-	PRESSED,
-	HELD
-};
-
-enum struct EScrollWheelState {
-	NONE,
-	UP,
-	DOWN
-};
+#include <SDL2/SDL_keycode.h>
+#include <SDL2/SDL_system.h>
+#include <SDL2/SDL_mouse.h>
 
 class C_Input
 {
+private:
+    bool IsKeyMouseKey(int key);
+
 public:
-	std::map<int, EKeyState> m_Keyboard = {};	
-	EKeyState m_RMouse					= {};
-	EKeyState m_LMouse					= {};
-	EKeyState m_MMouse					= {};
-	EScrollWheelState m_Wheel			= {};
-
-	void Update();
-
-	EKeyState GetKey(int key);
-	EKeyState GetMouse(int key);
+    bool IsKeyDown(int key);
 };
 
 extern C_Input gInput;

@@ -1,27 +1,18 @@
 #include "TriggerBot.h"
+#include "Input.h"
 
 bool C_TriggerBot::IsTriggerKeyDown()
 {
 	switch (nTriggerKey)
 	{
-		case 0: {
+		case 0:
 			return true;
-		}
-		case 1: {
-			return (GetAsyncKeyState(VK_SHIFT) & 0x8000);
-		}
-		case 2: {
-			return (GetAsyncKeyState(VK_XBUTTON1) & 0x8000);
-		}
-		case 3: {
-			return (GetAsyncKeyState(VK_XBUTTON2) & 0x8000);
-		}
-
-		//...
-
-		default: {
-			return false;
-		}
+		case 1:
+			return gInput.IsKeyDown(SDLK_LSHIFT);
+		case 2:
+			return gInput.IsKeyDown(SDL_BUTTON_LEFT);
+		case 3:
+			return gInput.IsKeyDown(SDL_BUTTON_MIDDLE);
 	}
 
 	return false;

@@ -4,9 +4,6 @@
 class C_SpectatorList
 {
 private:
-	std::wstring ConvertUtf8ToWide(const std::string &str);
-
-private:
 	struct Spectator_t
 	{
 		std::string sName = "";

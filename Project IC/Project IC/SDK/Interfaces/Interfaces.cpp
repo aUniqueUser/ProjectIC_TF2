@@ -1,92 +1,92 @@
 #include "Interfaces.h"
 
-#define CHECKNULL(func, message) if (!func) MessageBoxA(NULL, message, "nullptr cyka(!", MB_ICONERROR)
+#define CHECKNULL(func, message) if (!func) printf("%s", message)
 
-#define CLIENT_DLL		"client.dll"
-#define ENGINE_DLL		"engine.dll"
-#define SERVER_DLL		"server.dll"
-#define VGUI2_DLL		"vgui2.dll"
-#define MATSURFACE_DLL	"vguimatsurface.dll"
-#define VSTDLIB_DLL		"vstdlib.dll"
-#define STEAMCLIENT_DLL "SteamClient.dll"
-#define MATSYSTEM_DLL   "MaterialSystem.dll"
+#define CLIENT_SO		"client.so"
+#define ENGINE_SO		"engine.so"
+#define SERVER_SO		"server.so"
+#define VGUI2_SO		"vgui2.so"
+#define MATSURFACE_SO	"vguimatsurface.so"
+#define VSTDLIB_SO		"vstdlib.so"
+#define STEAMCLIENT_SO "SteamClient.so"
+#define MATSYSTEM_SO   "MaterialSystem.so"
 
 void C_Interfaces::Init()
 {
-	Client = reinterpret_cast<C_BaseClientDLL*>(gInterface.Get(CLIENT_DLL, CLIENT_DLL_INTERFACE_VERSION));
+	Client = reinterpret_cast<C_BaseClientDLL*>(gInterface.Get(CLIENT_SO, CLIENT_DLL_INTERFACE_VERSION));
 	CHECKNULL(Client, "Client = nullptr!");
 
-	ClientShared = reinterpret_cast<C_ClientDLLSharedAppSystems*>(gInterface.Get(CLIENT_DLL, CLIENT_DLL_SHARED_APPSYSTEMS));
+	ClientShared = reinterpret_cast<C_ClientDLLSharedAppSystems*>(gInterface.Get(CLIENT_SO, CLIENT_DLL_SHARED_APPSYSTEMS));
 	CHECKNULL(ClientShared, "ClientShared = nullptr!");
 
-	EntityList = reinterpret_cast<C_ClientEntityList*>(gInterface.Get(CLIENT_DLL, VCLIENTENTITYLIST_INTERFACE_VERSION));
+	EntityList = reinterpret_cast<C_ClientEntityList*>(gInterface.Get(CLIENT_SO, VCLIENTENTITYLIST_INTERFACE_VERSION));
 	CHECKNULL(EntityList, "EntityList = nullptr!");
 
-	Prediction = reinterpret_cast<C_Prediction*>(gInterface.Get(CLIENT_DLL, VCLIENT_PREDICTION_INTERFACE_VERSION));
+	Prediction = reinterpret_cast<C_Prediction*>(gInterface.Get(CLIENT_SO, VCLIENT_PREDICTION_INTERFACE_VERSION));
 	CHECKNULL(Prediction, "Prediction = nullptr!");
 
-	GameMovement = reinterpret_cast<C_GameMovement*>(gInterface.Get(CLIENT_DLL, CLIENT_GAMEMOVEMENT_INTERFACE_VERSION));
+	GameMovement = reinterpret_cast<C_GameMovement*>(gInterface.Get(CLIENT_SO, CLIENT_GAMEMOVEMENT_INTERFACE_VERSION));
 	CHECKNULL(GameMovement, "GameMovement = nullptr!");
 
-	ModelInfo = reinterpret_cast<C_ModelInfoClient*>(gInterface.Get(ENGINE_DLL, VMODELINFO_CLIENT_INTERFACE_VERSION));
+	ModelInfo = reinterpret_cast<C_ModelInfoClient*>(gInterface.Get(ENGINE_SO, VMODELINFO_CLIENT_INTERFACE_VERSION));
 	CHECKNULL(ModelInfo, "ModelInfo = nullptr!");
 
-	Engine = reinterpret_cast<C_EngineClient *>(gInterface.Get(ENGINE_DLL, VENGINE_CLIENT_INTERFACE_VERSION_13));
+	Engine = reinterpret_cast<C_EngineClient *>(gInterface.Get(ENGINE_SO, VENGINE_CLIENT_INTERFACE_VERSION_13));
 	CHECKNULL(Engine, "Engine = nullptr!");
 
-	EngineTrace = reinterpret_cast<C_EngineTrace*>(gInterface.Get(ENGINE_DLL, VENGINE_TRACE_CLIENT_INTERFACE_VERSION));
+	EngineTrace = reinterpret_cast<C_EngineTrace*>(gInterface.Get(ENGINE_SO, VENGINE_TRACE_CLIENT_INTERFACE_VERSION));
 	CHECKNULL(EngineTrace, "EngineTrace = nullptr!");
 
-	Panel = reinterpret_cast<C_Panel*>(gInterface.Get(VGUI2_DLL, VGUI_PANEL_INTERFACE_VERSION));
+	Panel = reinterpret_cast<C_Panel*>(gInterface.Get(VGUI2_SO, VGUI_PANEL_INTERFACE_VERSION));
 	CHECKNULL(Panel, "Panel = nullptr!");
 
-	Surface = reinterpret_cast<C_Surface*>(gInterface.Get(MATSURFACE_DLL, VGUI_SURFACE_INTERFACE_VERSION));
+	Surface = reinterpret_cast<C_Surface*>(gInterface.Get(MATSURFACE_SO, VGUI_SURFACE_INTERFACE_VERSION));
 	CHECKNULL(Surface, "Surface = nullptr!");
 
-	CVars = reinterpret_cast<ICvar*>(gInterface.Get(VSTDLIB_DLL, VENGINE_CVAR_INTERFACE_VERSION));
+	CVars = reinterpret_cast<ICvar*>(gInterface.Get(VSTDLIB_SO, VENGINE_CVAR_INTERFACE_VERSION));
 	CHECKNULL(CVars, "CVars = nullptr!");
 
-	GlobalVars = *reinterpret_cast<C_GlobalVarsBase**>(gPattern.Find(ENGINE_DLL, "A1 ? ? ? ? 8B 11 68") + 0x8);
+	GlobalVars = *reinterpret_cast<C_GlobalVarsBase**>(gPattern.Find(CLIENT_SO, "8B 45 08 8B 15 ? ? ? ? F3 0F 10 88 ? ? ? ?") + 5);
 	CHECKNULL(GlobalVars, "GlobalVars = nullptr!");
 
-	void *ClientTable = reinterpret_cast<void *>(gPattern.Find(CLIENT_DLL, "8B 0D ? ? ? ? 8B 02 D9 05"));
+	void *ClientTable = reinterpret_cast<void *>(gPattern.Find(CLIENT_SO, "8B 0D ? ? ? ? 8B 02 D9 05"));
 	CHECKNULL(ClientTable, "ClientTable = nullptr!");
 
-	ClientMode = **reinterpret_cast<C_ClientModeShared ***>(reinterpret_cast<DWORD>(ClientTable) + 2);
+	ClientMode = **reinterpret_cast<C_ClientModeShared ***>(reinterpret_cast<uintptr_t>(ClientTable) + 2);
 	CHECKNULL(ClientMode, "ClientMode = nullptr!");
 
-	EngineVGui = reinterpret_cast<C_EngineVGui *>(gInterface.Get(ENGINE_DLL, VENGINE_VGUI_VERSION));
+	EngineVGui = reinterpret_cast<C_EngineVGui *>(gInterface.Get(ENGINE_SO, VENGINE_VGUI_VERSION));
 	CHECKNULL(EngineVGui, "EngineVGui = nullptr!");
 
-	RandomSeed = *reinterpret_cast<int32_t **>(gPattern.Find(CLIENT_DLL, "C7 05 ? ? ? ? ? ? ? ? 5D C3 8B 40 34") + 0x2);
+	RandomSeed = *reinterpret_cast<int32_t **>(gPattern.Find(CLIENT_SO, "A3 ? ? ? ? C3 8D 74 26 00 B8 FF FF FF FF 5D A3 ? ? ? ? C3") + 1);
 	CHECKNULL(RandomSeed, "RandomSeed = nullptr!");
 
-	DemoPlayer = **reinterpret_cast<void***>(gPattern.Find(ENGINE_DLL, "8B 0D ? ? ? ? 85 C9 74 3B 8B 01 8B 40 18 FF D0 84 C0 74 30") + 0x2);
+	DemoPlayer = **reinterpret_cast<void***>(gPattern.Find(ENGINE_SO, "89 15 ? ? ? ? BA ? ? ? ? 83 38 01") + 0x2);
 	CHECKNULL(DemoPlayer, "DemoPlayer = nullptr!");
 
-	EngineRenderer = **reinterpret_cast<C_Render ***>(gPattern.Find(ENGINE_DLL, "8B 0D ? ? ? ? FF 75 0C FF 75 08 8B 01 FF 50 0C 83 7D FC 00") + 0x2);
+	EngineRenderer = **reinterpret_cast<C_Render ***>(gPattern.Find(ENGINE_SO, "8B 0D ? ? ? ? FF 75 0C FF 75 08 8B 01 FF 50 0C 83 7D FC 00") + 0x2);
 	CHECKNULL(EngineRenderer, "EngineRenderer = nullptr!");
 
-	DebugOverlay = reinterpret_cast<IDebugOverlay*>(gInterface.Get(ENGINE_DLL, VENGINE_DEBUGOVERLAY_INTERFACE_VERSION));
+	DebugOverlay = reinterpret_cast<IDebugOverlay*>(gInterface.Get(ENGINE_SO, VENGINE_DEBUGOVERLAY_INTERFACE_VERSION));
 	CHECKNULL(DebugOverlay, "DebugOverlay = nullptr!");
 
-	GameEvent = reinterpret_cast<C_GameEventManager*>(gInterface.Get(ENGINE_DLL, GAMEEVENTSMANAGER_ENGINE_INTERFACE));
+	GameEvent = reinterpret_cast<C_GameEventManager*>(gInterface.Get(ENGINE_SO, GAMEEVENTSMANAGER_ENGINE_INTERFACE));
 	CHECKNULL(GameEvent, "GameEvent = nullptr!");
 
-	ModelRender = reinterpret_cast<C_ModelRender*>(gInterface.Get(ENGINE_DLL, VENGINE_MODELRENDER_INTERFACE));
+	ModelRender = reinterpret_cast<C_ModelRender*>(gInterface.Get(ENGINE_SO, VENGINE_MODELRENDER_INTERFACE));
 	CHECKNULL(ModelRender, "ModelRender = nullptr!");
 
-	MatSystem = reinterpret_cast<C_MaterialSystem*>(gInterface.Get(MATSYSTEM_DLL, VMATERIALSYSTEM_INTERFACE));
+	MatSystem = reinterpret_cast<C_MaterialSystem*>(gInterface.Get(MATSYSTEM_SO, VMATERIALSYSTEM_INTERFACE));
 	CHECKNULL(MatSystem, "MatSystem = nullptr!");
 
-	RenderView = reinterpret_cast<IVRenderView*>(gInterface.Get(ENGINE_DLL, VENGINE_RENDERVIEW_INTERFACE_VERSION));
+	RenderView = reinterpret_cast<IVRenderView*>(gInterface.Get(ENGINE_SO, VENGINE_RENDERVIEW_INTERFACE_VERSION));
 	CHECKNULL(RenderView, "RenderView = nullptr!");
 
 	//Njet problem, normal katastrof
 	//Lets hope I remember to change this
-	auto pdwClient = reinterpret_cast<PDWORD>(Client);
-	auto pdwTable = *reinterpret_cast<PDWORD*>(pdwClient);
-	ViewRender = **reinterpret_cast<IViewRender***>(static_cast<DWORD>(pdwTable[27]) + 5);
+	auto pdwClient = reinterpret_cast<uintptr_t *>(Client);
+	auto pdwTable = *reinterpret_cast<uintptr_t **>(pdwClient);
+	ViewRender = **reinterpret_cast<IViewRender***>(static_cast<uintptr_t>(pdwTable[27]) + 5);
 	CHECKNULL(ViewRender, "ViewRender = nullptr!");
 }
 
@@ -94,7 +94,7 @@ C_Interfaces gInts;
 
 void C_SteamInterfaces::Init()
 {
-	gSteam.Client = reinterpret_cast<ISteamClient017*>(gInterface.Get(STEAMCLIENT_DLL, STEAMCLIENT_INTERFACE_VERSION_017));
+	gSteam.Client = reinterpret_cast<ISteamClient017*>(gInterface.Get(STEAMCLIENT_SO, STEAMCLIENT_INTERFACE_VERSION_017));
 
 	HSteamPipe hsNewPipe = gSteam.Client->CreateSteamPipe();
 	HSteamPipe hsNewUser = gSteam.Client->ConnectToGlobalUser(hsNewPipe);

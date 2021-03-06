@@ -31,7 +31,6 @@ public:
 	bool bAmmo		= true;
 
 private:
-	std::wstring ConvertUtf8ToWide(const std::string &str);
 	std::string szGetFlag(int nHash);
 
 private:

@@ -6,7 +6,6 @@
 #include <elf.h>
 #include <link.h>
 
-#include <bits/mman.h>
 #include <sys/mman.h>
 
 class CPattern

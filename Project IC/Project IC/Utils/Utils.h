@@ -6,8 +6,8 @@
 #include "Pattern/Pattern.h"
 #include "Hash/Hash.h"
 #include "UtlVector/UtlVector.h"
+#include "String/String.h"
 
-#include <Windows.h>
 #include <unordered_map>
 #include <memory>
 #include <stdexcept>
@@ -15,7 +15,6 @@
 #include <chrono>
 #include <string>
 #include <random>
-#include <intrin.h>
 #include <thread>
 #include <array>
 

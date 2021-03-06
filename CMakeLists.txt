@@ -68,11 +68,12 @@ include_directories("Project IC/Project IC/Utils/Hash")
 include_directories("Project IC/Project IC/Utils/Interface")
 include_directories("Project IC/Project IC/Utils/Math")
 include_directories("Project IC/Project IC/Utils/Pattern")
+include_directories("Project IC/Project IC/Utils/String")
 include_directories("Project IC/Project IC/Utils/UtlVector")
 include_directories("Project IC/Project IC/Utils/VFunc")
 include_directories("Project IC/Project IC/Utils/VMT")
 
-add_executable(ProjectIC_TF2
+add_library(ProjectIC_TF2 SHARED
         "Project IC/Project IC/Features/Aimbot/Aimbot.cpp"
         "Project IC/Project IC/Features/Aimbot/Aimbot.h"
         "Project IC/Project IC/Features/Menu/Input/Input.cpp"
@@ -434,8 +435,13 @@ add_executable(ProjectIC_TF2
         "Project IC/Project IC/Utils/Math/Math.h"
         "Project IC/Project IC/Utils/Pattern/Pattern.cpp"
         "Project IC/Project IC/Utils/Pattern/Pattern.h"
+        "Project IC/Project IC/Utils/String/String.cpp"
+        "Project IC/Project IC/Utils/String/String.h"
         "Project IC/Project IC/Utils/UtlVector/UtlVector.h"
         "Project IC/Project IC/Utils/VFunc/VFunc.h"
         "Project IC/Project IC/Utils/VMT/VMT.h"
         "Project IC/Project IC/Utils/Utils.h"
         "Project IC/Project IC/DLLMain.cpp")
+
+find_package(SDL2 REQUIRED)
+target_include_directories(ProjectIC_TF2 PRIVATE "${SDL2_INCLUDE_DIRS}")

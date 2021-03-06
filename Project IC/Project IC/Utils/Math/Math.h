@@ -149,24 +149,24 @@ public:
 		x = X; y = Y;
 	}
 
-	float Lenght(void) const
+	float Length(void) const
 	{
 		return sqrtf(x * x + y * y);
 	}
 
-	float LenghtSqr(void) const
+	float LengthSqr(void) const
 	{
 		return (x * x + y * y);
 	}
 
 	float DistTo(const Vec2& v) const
 	{
-		return (*this - v).Lenght();
+		return (*this - v).Length();
 	}
 
 	float DistToSqr(const Vec2& v) const
 	{
-		return (*this - v).LenghtSqr();
+		return (*this - v).LengthSqr();
 	}
 
 	float Dot(const Vec2& v) const
@@ -327,26 +327,26 @@ public:
 		x = X; y = Y; z = Z;
 	}
 
-	float Lenght(void) const
+	float Length(void) const
 	{
 		return sqrtf(x * x + y * y + z * z);
 	}
 
-	float LenghtSqr(void) const
+	float LengthSqr(void) const
 	{
 		return (x * x + y * y + z * z);
 	}
 
 	float Normalize()
 	{
-		float fl_lenght = Lenght();
-		float fl_lenght_normal = 1.f / (FLT_EPSILON + fl_lenght);
+		float fl_Length = Length();
+		float fl_Length_normal = 1.f / (FLT_EPSILON + fl_Length);
 
-		x = x * fl_lenght_normal;
-		y = y * fl_lenght_normal;
-		z = z * fl_lenght_normal;
+		x = x * fl_Length_normal;
+		y = y * fl_Length_normal;
+		z = z * fl_Length_normal;
 
-		return fl_lenght;
+		return fl_Length;
 	}
 
 	float NormalizeInPlace()
@@ -354,24 +354,24 @@ public:
 		return Normalize();
 	}
 
-	float Lenght2D(void) const
+	float Length2D(void) const
 	{
 		return sqrtf(x * x + y * y);
 	}
 
-	float Lenght2DSqr(void) const
+	float Length2DSqr(void) const
 	{
 		return (x * x + y * y);
 	}
 
 	float DistTo(const Vec3& v) const
 	{
-		return (*this - v).Lenght();
+		return (*this - v).Length();
 	}
 
 	float DistToSqr(const Vec3& v) const
 	{
-		return (*this - v).LenghtSqr();
+		return (*this - v).LengthSqr();
 	}
 
 	float Dot(const Vec3& v) const
@@ -404,7 +404,7 @@ public:
 	float x, y, z;
 };
 
-class __declspec(align(16))VectorAligned : public Vec3
+class VectorAligned : public Vec3
 {
 public:
 	inline VectorAligned(void) { };
@@ -429,26 +429,18 @@ typedef float matrix3x4[3][4];
 
 namespace Math
 {
-	inline double __declspec (naked) __fastcall FastSqrt(double n)
+	inline double FastSqrt(double n)
 	{
-		_asm fld qword ptr[esp + 4]
-			_asm fsqrt
-		_asm ret 8
+	    return sqrtf(n);
 	}
 
 	inline void SinCos(float radians, float* sine, float* cosine)
 	{
-		_asm
-		{
-			fld		DWORD PTR[radians]
-			fsincos
+        double __cosr, __sinr;
+        __asm ("fsincos" : "=t" (__cosr), "=u" (__sinr) : "0" (radians));
 
-			mov edx, DWORD PTR[cosine]
-			mov eax, DWORD PTR[sine]
-
-			fstp DWORD PTR[edx]
-			fstp DWORD PTR[eax]
-		}
+        *sine = __sinr;
+        *cosine = __cosr;
 	}
 
 	inline float NormalizeAngle(float ang)
@@ -524,14 +516,14 @@ namespace Math
 
 	inline float VectorNormalize(Vec3& vector)
 	{
-		float lenght = vector.Lenght();
+		float Length = vector.Length();
 
-		if (!lenght)
+		if (!Length)
 			vector.Set();
 		else
-			vector /= lenght;
+			vector /= Length;
 
-		return lenght;
+		return Length;
 	}
 
 	inline Vec3 CalcAngle(const Vec3& source, const Vec3& destination)
@@ -558,7 +550,7 @@ namespace Math
 		Vec3 v_dst = Vec3();
 		AngleVectors(dst, &v_dst);
 
-		float result = RAD2DEG(acos(v_dst.Dot(v_src) / v_dst.LenghtSqr()));
+		float result = RAD2DEG(acos(v_dst.Dot(v_src) / v_dst.LengthSqr()));
 
 		if (!isfinite(result) || isinf(result) || isnan(result))
 			result = 0.0f;
@@ -600,7 +592,7 @@ namespace Math
 			if (yaw < 0)
 				yaw += 360;
 
-			tmp = forward.Lenght2D();
+			tmp = forward.Length2D();
 			pitch = RAD2DEG(atan2f(-forward.z, tmp));
 
 			if (pitch < 0)
@@ -635,7 +627,7 @@ namespace Math
 		Math::SinCos(DEG2RAD(angles.y), &sy, &cy);
 
 		Vec3 forward = { cp * cy, cp * sy, -sp };
-		forward *= (1.f / (FLT_EPSILON + forward.Lenght()));
+		forward *= (1.f / (FLT_EPSILON + forward.Length()));
 		return forward;
 	}
 
@@ -842,7 +834,6 @@ inline int VPlane::GetPointSideExact(const Vec3& vPoint) const
 {
 	return DistTo(vPoint) > 0.0f ? SIDE_FRONT : SIDE_BACK;
 }
-
 
 // BUGBUG: This should either simply use the implementation in mathlib or cease to exist.
 // mathlib implementation is much more efficient.  Check to see that VPlane isn't used in

@@ -1,37 +1,26 @@
 #include "Input.h"
 
-void C_Input::Update()
+bool C_Input::IsKeyMouseKey(int key)
 {
-	for (auto &Key : gInput.m_Keyboard) {
-		if (Key.second != EKeyState::NONE)
-			Key.second = EKeyState::HELD;
-	}
-
-	if (gInput.m_RMouse != EKeyState::NONE)
-		gInput.m_RMouse = EKeyState::HELD;
-
-	if (gInput.m_LMouse != EKeyState::NONE)
-		gInput.m_LMouse = EKeyState::HELD;
-
-	if (gInput.m_MMouse != EKeyState::NONE)
-		gInput.m_MMouse = EKeyState::HELD;
+    return key == SDL_BUTTON_LEFT || key == SDL_BUTTON_MIDDLE || key == SDL_BUTTON_RIGHT || key == SDL_BUTTON_X1 || key == SDL_BUTTON_X2;
 }
 
-EKeyState C_Input::GetKey(int key)
+bool C_Input::IsKeyDown(int key)
 {
-	return m_Keyboard[key];
-}
+    if (IsKeyMouseKey(key))
+    {
+        auto flag = SDL_GetMouseState(nullptr, nullptr);
+        if (flag & SDL_BUTTON(key))
+            return true;
+    }
+    else
+    {
+        auto keys = SDL_GetKeyboardState(nullptr);
+        if (keys[SDL_GetScancodeFromKey(key)])
+            return true;
+    }
 
-EKeyState C_Input::GetMouse(int key)
-{
-	switch (key)
-	{
-		case VK_RBUTTON: { return m_RMouse; }
-		case VK_LBUTTON: { return m_LMouse; }
-		case VK_MBUTTON: { return m_MMouse; }
-	}
-
-	return {};
+    return false;
 }
 
 C_Input gInput;

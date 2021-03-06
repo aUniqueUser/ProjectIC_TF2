@@ -1,8 +1,16 @@
 #include "Hooks/Hooks.h"
+#include "Input.h"
 
 #include "Features/Visuals/Chams/Chams.h"
 
-DWORD WINAPI MainThread(Lvoid * lpParam)
+#include <pthread.h>
+#include <semaphore.h>
+
+static bool sem_main_inited;
+static sem_t sem_main;
+static pthread_t thread_main;
+
+void *MainThread(void *arg)
 {
 	gSteam.Init();
 	gInts.Init();
@@ -40,31 +48,33 @@ DWORD WINAPI MainThread(Lvoid * lpParam)
 		{ 0x0, "Segoe UI", 20, 0, FONTFLAG_ANTIALIAS }
 	});
 
-	//CSteamID csLocal = gSteam.User->GetSteamID();
-	//csLocal.Render() = Steam ID
-	//csLocal.SteamRender() = Steam ID3
-
 	//Stuck at this, as long as "panic" key is not pressed.
-	while (!(GetAsyncKeyState(VK_F11) & 0x8000))
+	while (!gInput.IsKeyDown(SDLK_F11))
 		std::this_thread::sleep_for(std::chrono::seconds(1));
-	
-	//releasing them in DLL DETACH just crashed the game on a normal exit
-	//when our dll unloads after the game and baseclass is inaccessible
+
 	gHooks.Release();
-	FreeLibraryAndExitThread(static_cast<HMODULE>(lpParam), EXIT_SUCCESS);
+	std::_Exit(EXIT_SUCCESS);
 }
 
-BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, Lvoid * lpvReserved)
+void __attribute__((constructor)) attach()
 {
-	switch (fdwReason)
-	{
-		case DLL_PROCESS_ATTACH: {
-			if (HANDLE hMain = CreateThread(0, 0, MainThread, hinstDLL, 0, 0)) CloseHandle(hMain);
-			break;
-		}
+    if (sem_main_inited)
+        return;
 
-		default: break;
-	}
+    sem_init(&sem_main, 0, 0);
 
-	return TRUE;
+    sem_main_inited = true;
+
+    pthread_create(&thread_main, nullptr, MainThread, nullptr);
+}
+
+void detach()
+{
+    sem_post(&sem_main);
+    pthread_join(thread_main, nullptr);
+}
+
+void __attribute__((destructor)) deconstruct()
+{
+    detach();
 }

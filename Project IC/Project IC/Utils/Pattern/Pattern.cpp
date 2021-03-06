@@ -1,4 +1,5 @@
 #include "Pattern.h"
+#include <cstdio>
 
 #define INRANGE(x,a,b)	(x >= a && x <= b) 
 #define GetBits(x)		(INRANGE((x&(~0x20)),'A','F') ? ((x&(~0x20)) - 'A' + 0xa) : (INRANGE(x,'0','9') ? x - '0' : 0))
@@ -68,6 +69,7 @@ uintptr_t CPattern::FindPattern(uintptr_t dwAddress, uintptr_t dwLength, const c
             firstMatch = 0;
         }
     }
+    printf("FATAL! Could not locate pattern: %s", szPattern);
     return 0;
 }
 

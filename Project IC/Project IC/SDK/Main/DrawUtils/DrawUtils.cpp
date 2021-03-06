@@ -2,6 +2,8 @@
 
 #include "../../../SDK/Includes/icons.h"
 
+#include <cstdarg>
+
 void ScreenSize_t::Update() {
 	gInts.Engine->GetScreenSize(this->w, this->h);
 }
@@ -20,7 +22,7 @@ void Draw_t::ReloadFonts()
 	for (auto& v : Fonts)
 	{
 		v.dwFont = gInts.Surface->CreateFont();
-		gInts.Surface->SetFontGlyphSet(v.dwFont, v.szName, v.nTall, v.nWeight, 0, 0, v.nFlags);
+		gInts.Surface->SetFontGlyphSet(v.dwFont, v.szPath, v.nTall, v.nWeight, 0, 0, v.nFlags);
 	}
 }
 
@@ -34,10 +36,10 @@ void Draw_t::String(const size_t& font_idx, int x, int y, const Color_t& clr, co
 	wchar_t wstr[1024] = { '\0' };
 
 	va_start(va_alist, str);
-	vsprintf_s(cbuffer, str, va_alist);
+	vsprintf(cbuffer, str, va_alist);
 	va_end(va_alist);
 
-	wsprintfW(wstr, L"%S", cbuffer);
+    swprintf(wstr, sizeof(wstr), L"%S", cbuffer);
 
 	gInts.Surface->SetTextPos(x, y);
 	gInts.Surface->SetTextFont(Fonts.at(font_idx).dwFont);
@@ -66,10 +68,10 @@ void Draw_t::StringCenter(const size_t& font_idx, int x, int y, const Color_t& c
 	wchar_t wstr[1024] = { '\0' };
 
 	va_start(va_alist, str);
-	vsprintf_s(cbuffer, str, va_alist);
+	vsprintf(cbuffer, str, va_alist);
 	va_end(va_alist);
 
-	wsprintfW(wstr, L"%S", cbuffer);
+    swprintf(wstr, sizeof(wstr), L"%S", cbuffer);
 
 	int w = 0, h = 0;
 	gInts.Surface->GetTextSize(Fonts.at(font_idx).dwFont, wstr, w, h);
@@ -91,10 +93,10 @@ void Draw_t::StringCenterV(const size_t &font_idx, int x, int y, const Color_t &
 	wchar_t wstr[1024] = { '\0' };
 
 	va_start(va_alist, str);
-	vsprintf_s(cbuffer, str, va_alist);
+	vsprintf(cbuffer, str, va_alist);
 	va_end(va_alist);
 
-	wsprintfW(wstr, L"%S", cbuffer);
+    swprintf(wstr, sizeof(wstr), L"%S", cbuffer);
 
 	int w = 0, h = 0;
 	gInts.Surface->GetTextSize(Fonts.at(font_idx).dwFont, wstr, w, h);
@@ -117,12 +119,12 @@ void Draw_t::StringCenterVOnly(const size_t &font_idx, int x, int y, const Color
 	wchar_t wstr[1024] = { '\0' };
 
 	va_start(va_alist, str);
-	vsprintf_s(cbuffer, str, va_alist);
+	vsprintf(cbuffer, str, va_alist);
 	va_end(va_alist);
 
-	wsprintfW(wstr, L"%S", cbuffer);
+    swprintf(wstr, sizeof(wstr), L"%S", cbuffer);
 
-	int w = 0, h = 0;
+    int w = 0, h = 0;
 	gInts.Surface->GetTextSize(Fonts.at(font_idx).dwFont, wstr, w, h);
 	y -= (h / 2);
 

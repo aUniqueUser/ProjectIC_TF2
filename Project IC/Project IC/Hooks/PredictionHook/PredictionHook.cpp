@@ -1,6 +1,6 @@
 #include "PredictionHook.h"
 
-void *PredictionHook::RunCommand::Hook(C_BaseEntity *pEntity, C_UserCmd *pCmd, C_MoveHelper *pMoveHelper)
+void PredictionHook::RunCommand::Hook(C_BaseEntity *pEntity, C_UserCmd *pCmd, C_MoveHelper *pMoveHelper)
 {
 	Table.Original<fn>(index)(gInts.Prediction, pEntity, pCmd, pMoveHelper);
 

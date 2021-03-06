@@ -7,13 +7,13 @@ class C_ModelRender
 public:
 	void ForcedMaterialOverride(IMaterial* mat, OverrideType_t type = OverrideType_t::OVERRIDE_NORMAL)
 	{
-		typedef void( FN)(void *, IMaterial*, OverrideType_t);
+		typedef void(*FN)(void *, IMaterial*, OverrideType_t);
 		return GetVFunc<FN>(this, 1)(this, mat, type);
 	}
 
 	void DrawModelExecute(const DrawModelState_t* pState, const ModelRenderInfo_t& pInfo, matrix3x4* pBoneToWorld)
 	{
-		typedef void( FN)(void *, const DrawModelState_t*, const ModelRenderInfo_t&, matrix3x4*);
+		typedef void(*FN)(void *, const DrawModelState_t*, const ModelRenderInfo_t&, matrix3x4*);
 		return GetVFunc<FN>(this, 19)(this, pState, pInfo, pBoneToWorld);
 	}
 };

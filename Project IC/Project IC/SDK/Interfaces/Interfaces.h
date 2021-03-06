@@ -51,11 +51,11 @@ class C_RenderView
 {
 public:
 	void SetBlend(float flBlend) {
-		typedef void( FN)(void *, float);
+		typedef void(*FN)(void *, float);
 		return GetVFunc<FN>(this, 4)(this, flBlend);
 	}
 	void SetColorModulation(const float* flColor) {
-		typedef void( FN)(void *, const float*);
+		typedef void(*FN)(void *, const float*);
 		return GetVFunc<FN>(this, 6)(this, flColor);
 	}
 	void GetMatricesForView(const C_ViewSetup &view, VMatrix *pWorldToView, VMatrix *pViewToProjection, VMatrix *pWorldToProjection, VMatrix *pWorldToPixels) {

@@ -63,15 +63,15 @@ bool C_BaseCombatWeapon::DoSwingTrace(C_GameTrace &Trace)
 	return GetVFunc<FN>(this, 453)(Trace);
 }
 
-bool C_BaseCombatWeapon::WillCrit()
-{
-	typedef bool(*FN)(C_BaseCombatWeapon*);
-
-	static DWORD dwFN = gPattern.Find("client.dll",
-	"55 8B EC 83 EC 18 56 57 6A 00 68 ? ? ? ? 68 ? ? ? ? 6A 00 8B F9 E8 ? ? ? ? 50 E8 ? ? ? ? 8B F0 83 C4 14 89 75 EC");
-
-	return ((FN)dwFN)(this);
-}
+//bool C_BaseCombatWeapon::WillCrit()
+//{
+//	typedef bool(*FN)(C_BaseCombatWeapon*);
+//
+//	static DWORD dwFN = gPattern.Find("client.dll",
+//	"55 8B EC 83 EC 18 56 57 6A 00 68 ? ? ? ? 68 ? ? ? ? 6A 00 8B F9 E8 ? ? ? ? 50 E8 ? ? ? ? 8B F0 83 C4 14 89 75 EC");
+//
+//	return ((FN)dwFN)(this);
+//}
 
 Vec3 &C_BaseCombatWeapon::GetBulletSpread()
 {

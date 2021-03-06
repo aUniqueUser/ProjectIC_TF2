@@ -1,5 +1,8 @@
 #pragma once
-#include <Windows.h>
+
+#include <cstdint>
+#include <cstring>
+#include <dlfcn.h>
 
 class CInterface
 {
@@ -9,12 +12,12 @@ private:
 	struct Interface_t
 	{
 		InstantiateInterface Interface;
-		PCHAR szInterfaceName;
+		const char *szInterfaceName;
 		Interface_t *NextInterface;
 	};
 
 public:
-	void * Get(PCCH szModule, PCCH szObject);
+	void * Get(const char *szModule, const char *szObject);
 };
 
 extern CInterface gInterface;

@@ -6,7 +6,7 @@ void C_NetVars::Init()
 {
 	const auto *client_class = gInts.Client->GetAllClasses();
 
-	while (client_class != nullptr) 
+	while (client_class != nullptr)
 	{
 		const auto class_info = std::make_shared<node>(0);
 		RecvTable *recv_table = reinterpret_cast<RecvTable*>(client_class->pRecvTable);
@@ -19,10 +19,11 @@ void C_NetVars::Init()
 
 void C_NetVars::populate_nodes(RecvTable *recv_table, map_type *map)
 {
+    map->clear();
 	for (auto i = 0; i < recv_table->GetNumProps(); i++)
 	{
-		const auto *prop = recv_table->GetPropW(i);
-		const auto prop_info = std::make_shared<node>(prop->GetOffset());
+        const auto *prop     = recv_table->GetProp(i);
+        const auto prop_info = std::make_shared<node>(prop->GetOffset());
 
 		if (prop->GetType() == DPT_DataTable)
 			populate_nodes(prop->GetDataTable(), &prop_info->nodes);

@@ -137,7 +137,7 @@ private:
 		if(RegOpenKeyExA(HKEY_LOCAL_MACHINE, "Software\\Valve\\Steam", 0, KEY_QUERY_VALUE, &hRegKey) == ERROR_SUCCESS)
 		{
 			DWORD dwLength = sizeof(m_szSteamPath) - 1;
-			if(RegQueryValueExA(hRegKey, "InstallPath", NULL, NULL, (BYTE*)m_szSteamPath, &dwLength) == ERROR_SUCCESS)
+			if(RegQueryValueExA(hRegKey, "InstallPath", NULL, NULL, (byte*)m_szSteamPath, &dwLength) == ERROR_SUCCESS)
 			{
 				m_szSteamPath[dwLength] = '\0';
 				bFallback = false;

@@ -19,7 +19,7 @@ public:
 	int GetDamageType();
 	bool CanFireCriticalShot(bool bHeadShot = false);
 	bool CanWeaponHeadShot();
-	bool WillCrit();
+	/* bool WillCrit(); TODO: Get pattern */
 	float GetNextPrimaryAttack();
 	float GetNextSecondaryAttack();
 	bool CanShoot(C_BaseEntity *pLocal);

@@ -25,7 +25,7 @@ struct mstudiohitboxset_t
 	inline char* const name(void) const { return ((char*)this) + sznameindex; }
 	int numhitboxes;
 	int hitboxindex;
-	mstudiobbox_t* hitbox(int i) const { return (mstudiobbox_t*)(((BYTE*)this) + hitboxindex) + i; };
+	mstudiobbox_t* hitbox(int i) const { return (mstudiobbox_t*)(((byte*)this) + hitboxindex) + i; };
 };
 
 struct studiohdr_t
@@ -77,7 +77,7 @@ struct Ray_t
 	{
 		vaDelta = destination - source;
 
-		IsSwept = (vaDelta.LenghtSqr() != 0);
+		IsSwept = (vaDelta.LengthSqr() != 0);
 
 		vaExtents.Set();
 		IsRay = true;
@@ -90,11 +90,11 @@ struct Ray_t
 	{
 		vaDelta = destination - source;
 
-		IsSwept = (vaDelta.LenghtSqr() != 0);
+		IsSwept = (vaDelta.LengthSqr() != 0);
 
 		vaExtents = max - min;
 		vaExtents *= 0.5f;
-		IsRay = (vaExtents.LenghtSqr() < 1e-6);
+		IsRay = (vaExtents.LengthSqr() < 1e-6);
 
 		vaStartOffset = min + max;
 
@@ -108,9 +108,9 @@ struct cplane_t
 {
 	Vec3 normal;
 	float dist;
-	BYTE type;
-	BYTE sign_bits;
-	BYTE pad[2];
+	byte type;
+	byte sign_bits;
+	byte pad[2];
 };
 
 struct csurface_t

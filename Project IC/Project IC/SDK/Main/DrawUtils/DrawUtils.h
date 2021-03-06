@@ -11,8 +11,8 @@ extern ScreenSize_t gScreenSize;
 
 struct Font_t
 {
-	DWORD dwFont = 0x0;
-	const char *szName = 0;
+	uintptr_t dwFont = 0x0;
+	const char *szPath{};
 	int nTall = 0;
 	int nWeight = 0;
 	int nFlags = 0;

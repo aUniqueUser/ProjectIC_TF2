@@ -2,14 +2,6 @@
 
 #include "../../Aimbot/Aimbot.h"
 
-std::wstring C_ESP::ConvertUtf8ToWide(const std::string& str)
-{
-	int count = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), NULL, 0);
-	std::wstring wstr(count, 0);
-	MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), &wstr[0], count);
-	return wstr;
-}
-
 bool C_ESP::ShouldRun()
 {
 	if (!bActive)
@@ -349,7 +341,7 @@ void C_ESP::Run()
 
 						if (gInts.Engine->GetPlayerInfo(Player->GetIndex(), &PlayerInfo))
 						{
-							auto str = ConvertUtf8ToWide(PlayerInfo.name);
+							auto str = Util::ConvertUTF8ToWide(PlayerInfo.name);
 
 							int offset = gDraw.Fonts.at(FONT).nTall;
 							gDraw.StringCenterW(FONT, (x + (w / 2)), (y - offset), DrawColor, str.c_str());

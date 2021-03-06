@@ -28,7 +28,7 @@ CTFPlayerAnimState *C_BaseEntity::GetAnimState()
 
 std::array<float, MAXSTUDIOPOSEPARAM> C_BaseEntity::GetPoseParam()
 {
-	static DWORD dwOffset = gNetVars.get_offset("DT_BaseAnimating", "m_flPoseParameter");
+	static uintptr_t dwOffset = gNetVars.get_offset("DT_BaseAnimating", "m_flPoseParameter");
 	return *reinterpret_cast<std::array<float, MAXSTUDIOPOSEPARAM> *>(this + dwOffset);
 }
 
@@ -203,18 +203,13 @@ void C_BaseEntity::SetRenderAngles(const Vec3 &v)
 void C_BaseEntity::SetAbsOrigin(const Vec3 &v)
 {
 	typedef void(*FN)(C_BaseEntity *, const Vec3 &);
-	static DWORD dwFN = gPattern.Find("client.dll", "55 8B EC 56 57 8B F1 E8 ? ? ? ? 8B 7D 08 F3 0F 10 07");
+	static uintptr_t dwFN = gPattern.Find("client.dll", "55 89 E5 57 56 53 83 EC 1C 8B 5D ? 8B 75 ? 89 1C 24 E8 ? ? ? ? F3 0F 10 06");
 	FN func = (FN)dwFN;
 	func(this, v);
 }
 
 void C_BaseEntity::SetAbsAngles(const Vec3 &v)
 {
-	/*typedef void(*FN)(C_BaseEntity *, const Vec3 &);
-	static DWORD dwFN = gPattern.FindInClient("55 8B EC 83 EC 60 56 57 8B F1 E8 ? ? ? ? 8B 7D 08 F3 0F 10 07 0F 2E 86 ? ? ? ? 9F F6 C4 44 7A 28 F3 0F 10 47 ?");
-	FN func = (FN)dwFN;
-	func(this, v);*/
-
 	Vec3 *pAbsAngles = const_cast<Vec3 *>(&this->GetAbsAngles());
 	*pAbsAngles = v;
 }
@@ -413,8 +408,8 @@ matrix3x4 &C_BaseEntity::GetRgflCoordinateFrame()
 Vec3 C_BaseEntity::GetVelocity()
 {
 	typedef void(*EstimateAbsVelocityFn)(C_BaseEntity *, Vec3 &);
-	static DWORD dwFn = gPattern.Find("client.dll", "E8 ? ? ? ? F3 0F 10 4D ? 8D 85 ? ? ? ? F3 0F 10 45 ? F3 0F 59 C9 56 F3 0F 59 C0 F3 0F 58 C8 0F 2F 0D ? ? ? ? 76 07") + 0x1;
-	static DWORD dwEstimate = ((*(PDWORD)(dwFn)) + dwFn + 0x4);
+	static uintptr_t dwFn = gPattern.Find("client.so", "55 89 E5 56 53 83 EC 20 8B 5D ? 8B 75 ? E8 ? ? ? ? 39 D8");
+	static uintptr_t dwEstimate = ((*(uintptr_t *)(dwFn)) + dwFn + 0x4);
 	EstimateAbsVelocityFn vel = (EstimateAbsVelocityFn)dwEstimate;
 	Vec3 v;
 	vel(this, v);
@@ -447,9 +442,9 @@ void C_BaseEntity::SetFlags(int nFlags)
 	DYNVAR_SET(int, this, nFlags, "DT_BasePlayer", "m_fFlags");
 }
 
-BYTE C_BaseEntity::GetLifeState()
+byte C_BaseEntity::GetLifeState()
 {
-	DYNVAR_RETURN(BYTE, this, "DT_BasePlayer", "m_lifeState");
+	DYNVAR_RETURN(byte, this, "DT_BasePlayer", "m_lifeState");
 }
 
 int C_BaseEntity::GetClassId()
@@ -516,10 +511,10 @@ int C_BaseEntity::GetCondEx2()
 
 void C_BaseEntity::RemoveCond(int cond)
 {
-	static DWORD offset = gNetVars.get_offset("DT_TFPlayer", "m_Shared", "m_nPlayerCond");
+	static uintptr_t offset = gNetVars.get_offset("DT_TFPlayer", "m_Shared", "m_nPlayerCond");
 
 	if (*reinterpret_cast<int *>(this + offset) &cond)
-		*reinterpret_cast<DWORD *>(this + offset) &= ~cond;
+		*reinterpret_cast<uintptr_t *>(this + offset) &= ~cond;
 }
 
 Vec3 C_BaseEntity::GetCollideableMins()
@@ -613,7 +608,7 @@ Vec3 C_BaseEntity::GetBonePos(int nBone)
 {
 	matrix3x4 matrix[128];
 
-	if (this->SetupBones(matrix, 128, 0x100, GetTickCount64()))
+	if (this->SetupBones(matrix, 128, 0x100, gInts.GlobalVars->curtime))
 		return Vec3(matrix[nBone][0][3], matrix[nBone][1][3], matrix[nBone][2][3]);
 
 	return Vec3(0.0f, 0.0f, 0.0f);

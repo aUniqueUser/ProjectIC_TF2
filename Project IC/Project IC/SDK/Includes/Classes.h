@@ -191,7 +191,7 @@ public:
 class C_ClientClass
 {
 public:
-	BYTE Pad[8];
+	byte Pad[8];
 	char *szNetworkName;
 	RecvTable *pRecvTable;
 	C_ClientClass *pNextClass;
@@ -260,6 +260,34 @@ public:
 
 struct CHudTexture;
 struct KeyValues;
+
+// -----------------------------------------------------------
+// Weapon sound types
+// Used to play sounds defined in the weapon's classname.txt file
+// This needs to match pWeaponSoundCategories in weapon_parse.cpp
+// ------------------------------------------------------------
+typedef enum {
+    EMPTY,
+    SINGLE,
+    SINGLE_NPC,
+    WPN_DOUBLE, // Can't be "DOUBLE" because windows.h uses it.
+    DOUBLE_NPC,
+    BURST,
+    RELOAD,
+    RELOAD_NPC,
+    MELEE_MISS,
+    MELEE_HIT,
+    MELEE_HIT_WORLD,
+    SPECIAL1,
+    SPECIAL2,
+    SPECIAL3,
+    TAUNT,
+    DEPLOY,
+
+    // Add new shoot sound types here
+
+    NUM_SHOOT_SOUND_TYPES,
+} WeaponSound_t;
 
 class FileWeaponInfo_t
 {

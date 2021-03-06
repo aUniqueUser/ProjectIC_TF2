@@ -11,64 +11,6 @@
 #include "../Visuals/Radar/Radar.h"
 #include "../Visuals/Chams/Chams.h"
 
-//TODO: stop using me
-namespace InputHelper
-{
-	enum State_t
-	{
-		NONE,
-		PRESSED,
-		HELD
-	};
-
-	State_t GetKey(int16_t key)
-	{
-		static State_t keys[256] = {NONE};
-
-		if (GetKeyState(key) & 0x8000)
-		{
-			if (keys[key] == PRESSED)
-				keys[key] = HELD;
-
-			else if (keys[key] != HELD)
-				keys[key] = PRESSED;
-		}
-
-		else keys[key] = NONE;
-
-		return keys[key];
-	}
-
-	bool IsPressed(int16_t key)
-	{
-		return (GetKey(key) == PRESSED);
-	}
-
-	bool IsHeld(int16_t key)
-	{
-		return (GetKey(key) == HELD);
-	}
-
-	bool IsPressedAndHeld(int16_t key)
-	{
-		State_t key_state = GetKey(key);
-
-		static std::chrono::time_point<std::chrono::steady_clock> start[256] = {std::chrono::steady_clock::now()};
-
-		if (key_state == PRESSED)
-		{
-			start[key] = std::chrono::steady_clock::now();
-			return true;
-		}
-
-		if (key_state == HELD && std::chrono::duration_cast<std::chrono::milliseconds>(
-			std::chrono::steady_clock::now() - start[key]).count() > 400)
-			return true;
-
-		return false;
-	}
-}
-
 void CMenu::CreateLists()
 {
 	static bool bDone = false;
@@ -83,7 +25,7 @@ void CMenu::CreateLists()
 					new CItemGroup{
 						"Main", {
 							new CItemBool("Active", &gAimbot.bActive),
-							new CItemInt("Key", &gAimbot.nAimKey, {{0, "Shift"}, {1, "XButton2"}}),
+							new CItemInt("Key", &gAimbot.nAimKey, {{0, "Middle Mouse"}, {1, "Always"}}),
 							new CItemInt("Aim Method", &gAimbot.nAimMethod, {{0, "Normal"}, {1, "Smooth"}, {2, "Magnetic"}, {3, "Silent"}}),
 							new CItemBool("Auto Shoot", &gAimbot.bAutoShoot),
 							new CItemBool("Wait For Charge", &gAimbot.bWaitForCharge)
@@ -235,7 +177,7 @@ void CMenu::CreateLists()
 					new CItemGroup{
 						"Main", {
 							new CItemBool("Active", &gTriggerBot.bActive),
-							new CItemInt("Key", &gTriggerBot.nTriggerKey, {{0, "Always"}, {1, "Shift"}, {2, "XButton1"}, {3, "XButton2"}})
+							new CItemInt("Key", &gTriggerBot.nTriggerKey, {{0, "Always"}, {1, "Shift"}, {2, "Left Mouse"}, {3, "Middle Mouse"}})
 						}
 					},
 
@@ -298,13 +240,13 @@ void CMenu::Run()
 {
 	CreateLists();
 
-	if (InputHelper::IsPressed(VK_INSERT))
+	if (gInput.IsKeyDown(SDLK_INSERT))
 	{
 		m_Open = !m_Open;
 		gInts.Surface->SetCursorAlwaysVisible(m_Open);
 	}
 
-	if (InputHelper::IsPressed(VK_ESCAPE) && m_Open)
+	if (gInput.IsKeyDown(SDLK_ESCAPE))
 	{
 		m_Open = !m_Open;
 		gInts.Surface->SetCursorAlwaysVisible(m_Open);
@@ -355,7 +297,7 @@ void CMenu::Run()
 				bool bHovered = (x > nGroupX && x < (nGroupX + (ListWidth - 2)) && y > nGroupY && y < (nGroupY + GroupH)
 				);
 
-				if (bHovered && InputHelper::IsPressed(VK_LBUTTON))
+				if (bHovered && gInput.IsKeyDown(SDL_BUTTON_LEFT))
 					ItemGroup->m_Open = !ItemGroup->m_Open;
 
 				//main background
@@ -393,7 +335,7 @@ void CMenu::Run()
 								{
 									if (bHovered)
 									{
-										if (InputHelper::IsPressedAndHeld(VK_RBUTTON))
+										if (gInput.IsKeyDown(SDL_BUTTON_RIGHT))
 										{
 											Int->m_AliasIdx++;
 											Int->m_AliasIdx = std::clamp(
@@ -402,7 +344,7 @@ void CMenu::Run()
 												first;
 										}
 
-										if (InputHelper::IsPressedAndHeld(VK_LBUTTON))
+										if (gInput.IsKeyDown(SDL_BUTTON_LEFT))
 										{
 											Int->m_AliasIdx--;
 											Int->m_AliasIdx = std::clamp(
@@ -421,14 +363,14 @@ void CMenu::Run()
 								{
 									if (bHovered)
 									{
-										if (InputHelper::IsPressedAndHeld(VK_RBUTTON))
+										if (gInput.IsKeyDown(SDL_BUTTON_RIGHT))
 										{
 											*reinterpret_cast<int*>(Int->m_Ptr) += 1;
 											*reinterpret_cast<int*>(Int->m_Ptr) = std::clamp(
 												*reinterpret_cast<int*>(Int->m_Ptr), Int->m_Min, Int->m_Max);
 										}
 
-										if (InputHelper::IsPressedAndHeld(VK_LBUTTON))
+										if (gInput.IsKeyDown(SDL_BUTTON_LEFT))
 										{
 											*reinterpret_cast<int*>(Int->m_Ptr) -= 1;
 											*reinterpret_cast<int*>(Int->m_Ptr) = std::clamp(
@@ -454,14 +396,14 @@ void CMenu::Run()
 
 								if (bHovered)
 								{
-									if (InputHelper::IsPressedAndHeld(VK_RBUTTON))
+									if (gInput.IsKeyDown(SDL_BUTTON_RIGHT))
 									{
 										*reinterpret_cast<float*>(Float->m_Ptr) += Float->m_Step;
 										*reinterpret_cast<float*>(Float->m_Ptr) = std::clamp(
 											*reinterpret_cast<float*>(Float->m_Ptr), Float->m_Min, Float->m_Max);
 									}
 
-									if (InputHelper::IsPressedAndHeld(VK_LBUTTON))
+									if (gInput.IsKeyDown(SDL_BUTTON_LEFT))
 									{
 										*reinterpret_cast<float*>(Float->m_Ptr) -= Float->m_Step;
 										*reinterpret_cast<float*>(Float->m_Ptr) = std::clamp(
@@ -483,7 +425,7 @@ void CMenu::Run()
 								//name
 								gDraw.StringCenterVOnly(FONT_MENU, nDrawX, nDrawY, DrawCol, "%s", Bool->m_Name.c_str());
 
-								if (bHovered && InputHelper::IsPressedAndHeld(VK_LBUTTON))
+								if (bHovered && gInput.IsKeyDown(SDL_BUTTON_LEFT))
 									*Bool->m_Ptr = !*Bool->m_Ptr;
 
 								//value

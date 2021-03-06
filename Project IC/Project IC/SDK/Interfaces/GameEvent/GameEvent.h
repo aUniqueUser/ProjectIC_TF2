@@ -33,7 +33,7 @@ class C_GameEventManager
 {
 public:
 	bool AddListener(C_GameEventListener* pListener, const char* szName, bool ServerSide) {
-		typedef bool( FN)(void *, C_GameEventListener*, const char*, bool);
+		typedef bool(*FN)(void *, C_GameEventListener*, const char*, bool);
 		return GetVFunc<FN>(this, 3)(this, pListener, szName, ServerSide);
 	}
 };

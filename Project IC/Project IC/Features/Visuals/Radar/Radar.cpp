@@ -1,4 +1,5 @@
 #include "Radar.h"
+#include "Input.h"
 
 #include "../ESP/ESP.h"
 #include "../../Menu/Menu.h"
@@ -250,10 +251,10 @@ void C_Radar::Drag(int& x, int& y, int w, int h)
 	int m_nMouseX, m_nMouseY;
 	gInts.Surface->GetCursorPos(m_nMouseX, m_nMouseY);
 
-	static POINT pCorrect;
+	static Vec2 pCorrect;
 	static bool m_bDrag = false;
 	static bool m_bMove = false;
-	bool bHeld = (GetAsyncKeyState(VK_LBUTTON) & 0x8000);
+	bool bHeld = gInput.IsKeyDown(SDL_BUTTON_LEFT);
 
 	if ((m_nMouseX > x &&
 		m_nMouseX < x + w &&

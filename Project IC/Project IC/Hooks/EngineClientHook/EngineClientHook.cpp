@@ -2,15 +2,15 @@
 
 bool EngineClientHook::IsPlayingTimeDemo::Hook()
 {
-	static DWORD dwInterpolateServerEntities = gPattern.Find("client.dll", "55 8B EC 83 EC 30 8B 0D ? ? ? ? 53 33 DB 89 5D DC 89 5D E0");
+	static uintptr_t dwInterpolateServerEntities = gPattern.Find("client.so", "84 C0 0F 85 ? ? ? ? E9 ? ? ? ? 8D 76 00 C6 05");
 
 	if (gGlobalInfo.bNoInterpolation)
 	{
 		C_BaseEntity *pLocal = gEntCache.pLocal;
 
-		if (pLocal)
+        if (pLocal)
 		{
-			if (reinterpret_cast<uintptr_t>(__builtin_return_address(1)) == (dwInterpolateServerEntities + 0xB8))
+            if ((uintptr_t) __builtin_return_address(1) == dwInterpolateServerEntities)
 				return true;
 		}
 	}

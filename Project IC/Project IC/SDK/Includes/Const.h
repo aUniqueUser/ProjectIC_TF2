@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2005, Valve Corporation, All rights reserved. ============//
+//========= Copyright ï¿½ 1996-2005, Valve Corporation, All rights reserved. ============//
 //
 // Purpose: 
 //
@@ -368,8 +368,8 @@ enum Collision_Group_t
 #define SOUND_NORMAL_CLIP_DIST	1000.0f
 
 // How many networked area portals do we allow?
-#define MAX_AREA_STATE_BYTES		32
-#define MAX_AREA_PORTAL_STATE_BYTES 24
+#define MAX_AREA_STATE_byteS		32
+#define MAX_AREA_PORTAL_STATE_byteS 24
 
 // user message max payload size (note, this value is used by the engine, so MODs cannot change it)
 #define MAX_USER_MSG_DATA 255
@@ -554,29 +554,6 @@ typedef CThreadNullMutex CSourceMutex;
 #define COORD_FRACTIONAL_BITS		5
 #define COORD_DENOMINATOR			(1<<(COORD_FRACTIONAL_BITS))
 #define COORD_RESOLUTION			(1.0/(COORD_DENOMINATOR))
-
-typedef enum {
-	EMPTY,
-	SINGLE,
-	SINGLE_NPC,
-	WPN_DOUBLE, // Can't be "DOUBLE" because windows.h uses it.
-	DOUBLE_NPC,
-	BURST,
-	RELOAD,
-	RELOAD_NPC,
-	MELEE_MISS,
-	MELEE_HIT,
-	MELEE_HIT_WORLD,
-	SPECIAL1,
-	SPECIAL2,
-	SPECIAL3,
-	TAUNT,
-	DEPLOY,
-
-	// Add new shoot sound types here
-
-	NUM_SHOOT_SOUND_TYPES,
-} WeaponSound_t;
 
 #define MAX_SHOOT_SOUNDS	16			// Maximum number of shoot sounds per shoot type
 

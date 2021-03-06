@@ -77,18 +77,18 @@ public:
 	virtual const char *GetName(void) const;
 	virtual const char *GetBaseName(void) const;
 	virtual int						GetSplitScreenPlayerSlot() const;
-	DWORD GetColor(void) const;
+	uintptr_t GetColor(void) const;
 	virtual void					AddFlags(int flags);
 	virtual int						GetFlags() const;
 	virtual	bool					IsCommand(void) const;
 	virtual void					SetValue(const char *value);
 	virtual void					SetValue(float value);
 	virtual void					SetValue(int value);
-	virtual void					SetValue(DWORD value);
+	virtual void					SetValue(uintptr_t value);
 	virtual void					InternalSetValue(const char *value);
 	virtual void					InternalSetFloatValue(float fNewValue);
 	virtual void					InternalSetIntValue(int nValue);
-	virtual void					InternalSetColorValue(DWORD value);
+	virtual void					InternalSetColorValue(uintptr_t value);
 	virtual bool					ClampValue(float &value);
 	virtual void					ChangeStringValue(const char *tempVal, float flOldValue);
 	virtual void					Create(const char *pName, const char *pDefaultValue, int flags = 0,
@@ -127,20 +127,20 @@ public:
 
 	char pad_0x0000[0x4]; //0x0000
 	ConVar *pNext; //0x0004 
-	__int32 bRegistered; //0x0008 
+	__int32_t bRegistered; //0x0008 
 	char *pszName; //0x000C 
 	char *pszHelpString; //0x0010 
-	__int32 nFlags; //0x0014 
+	__int32_t nFlags; //0x0014 
 	char pad_0x0018[0x4]; //0x0018
 	ConVar *pParent; //0x001C 
 	char *pszDefaultValue; //0x0020 
 	char *strString; //0x0024 
-	__int32 StringLength; //0x0028 
+	__int32_t StringLength; //0x0028 
 	float fValue; //0x002C 
-	__int32 nValue; //0x0030 
-	__int32 bHasMin; //0x0034 
+	__int32_t nValue; //0x0030 
+	__int32_t bHasMin; //0x0034 
 	float fMinVal; //0x0038 
-	__int32 bHasMax; //0x003C 
+	__int32_t bHasMax; //0x003C
 	float fMaxVal; //0x0040 
 	void *fnChangeCallback; //0x0044 
 };

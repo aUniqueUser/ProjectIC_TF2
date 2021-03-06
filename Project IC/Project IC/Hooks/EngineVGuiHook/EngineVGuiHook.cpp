@@ -19,11 +19,10 @@ void EngineVGuiHook::Paint::Hook(int mode)
     typedef void (*FN)(C_Surface *);
 
     static auto StartDrawing  = gPattern.Find("vguimatsurface.dll", "55 8B EC 64 A1 ? ? ? ? 6A FF 68 ? ? ? ? 50 64 89 25 ? ? ? ? 83 EC 14");
-	static auto FinishDrawing = gPattern.Find("vguimatsurface.dll", "55 8B EC 6A FF 68 ? ? ? ? 64 A1 ? ? ? ? 50 64 89 25 ? ? ? ? 51 56 6A 00");
+    static auto FinishDrawing = gPattern.Find("vguimatsurface.dll", "55 8B EC 6A FF 68 ? ? ? ? 64 A1 ? ? ? ? 50 64 89 25 ? ? ? ? 51 56 6A 00");
 
     FN StartDrawing_fn  = FN(StartDrawing);
     FN FinishDrawing_fn = FN(FinishDrawing);
-
 
     //HACK: for some reason we need to do this
 	{
